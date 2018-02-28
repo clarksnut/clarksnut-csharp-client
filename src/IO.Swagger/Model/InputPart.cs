@@ -33,29 +33,29 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InputPart" /> class.
         /// </summary>
-        /// <param name="ContentTypeFromMessage">ContentTypeFromMessage.</param>
         /// <param name="BodyAsString">BodyAsString.</param>
+        /// <param name="ContentTypeFromMessage">ContentTypeFromMessage.</param>
         /// <param name="Headers">Headers.</param>
         /// <param name="MediaType">MediaType.</param>
-        public InputPart(bool? ContentTypeFromMessage = default(bool?), string BodyAsString = default(string), Dictionary<string, List<string>> Headers = default(Dictionary<string, List<string>>), MediaType MediaType = default(MediaType))
+        public InputPart(string BodyAsString = default(string), bool? ContentTypeFromMessage = default(bool?), Dictionary<string, List<string>> Headers = default(Dictionary<string, List<string>>), MediaType MediaType = default(MediaType))
         {
-            this.ContentTypeFromMessage = ContentTypeFromMessage;
             this.BodyAsString = BodyAsString;
+            this.ContentTypeFromMessage = ContentTypeFromMessage;
             this.Headers = Headers;
             this.MediaType = MediaType;
         }
         
         /// <summary>
-        /// Gets or Sets ContentTypeFromMessage
-        /// </summary>
-        [DataMember(Name="contentTypeFromMessage", EmitDefaultValue=false)]
-        public bool? ContentTypeFromMessage { get; set; }
-
-        /// <summary>
         /// Gets or Sets BodyAsString
         /// </summary>
         [DataMember(Name="bodyAsString", EmitDefaultValue=false)]
         public string BodyAsString { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ContentTypeFromMessage
+        /// </summary>
+        [DataMember(Name="contentTypeFromMessage", EmitDefaultValue=false)]
+        public bool? ContentTypeFromMessage { get; set; }
 
         /// <summary>
         /// Gets or Sets Headers
@@ -77,8 +77,8 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class InputPart {\n");
-            sb.Append("  ContentTypeFromMessage: ").Append(ContentTypeFromMessage).Append("\n");
             sb.Append("  BodyAsString: ").Append(BodyAsString).Append("\n");
+            sb.Append("  ContentTypeFromMessage: ").Append(ContentTypeFromMessage).Append("\n");
             sb.Append("  Headers: ").Append(Headers).Append("\n");
             sb.Append("  MediaType: ").Append(MediaType).Append("\n");
             sb.Append("}\n");
@@ -116,14 +116,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.ContentTypeFromMessage == input.ContentTypeFromMessage ||
-                    (this.ContentTypeFromMessage != null &&
-                    this.ContentTypeFromMessage.Equals(input.ContentTypeFromMessage))
-                ) && 
-                (
                     this.BodyAsString == input.BodyAsString ||
                     (this.BodyAsString != null &&
                     this.BodyAsString.Equals(input.BodyAsString))
+                ) && 
+                (
+                    this.ContentTypeFromMessage == input.ContentTypeFromMessage ||
+                    (this.ContentTypeFromMessage != null &&
+                    this.ContentTypeFromMessage.Equals(input.ContentTypeFromMessage))
                 ) && 
                 (
                     this.Headers == input.Headers ||
@@ -146,10 +146,10 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ContentTypeFromMessage != null)
-                    hashCode = hashCode * 59 + this.ContentTypeFromMessage.GetHashCode();
                 if (this.BodyAsString != null)
                     hashCode = hashCode * 59 + this.BodyAsString.GetHashCode();
+                if (this.ContentTypeFromMessage != null)
+                    hashCode = hashCode * 59 + this.ContentTypeFromMessage.GetHashCode();
                 if (this.Headers != null)
                     hashCode = hashCode * 59 + this.Headers.GetHashCode();
                 if (this.MediaType != null)

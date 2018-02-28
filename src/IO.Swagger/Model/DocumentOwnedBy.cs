@@ -25,25 +25,25 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// DocumentRelationships
+    /// DocumentOwnedBy
     /// </summary>
     [DataContract]
-    public partial class DocumentRelationships :  IEquatable<DocumentRelationships>, IValidatableObject
+    public partial class DocumentOwnedBy :  IEquatable<DocumentOwnedBy>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DocumentRelationships" /> class.
+        /// Initializes a new instance of the <see cref="DocumentOwnedBy" /> class.
         /// </summary>
-        /// <param name="OwnedBy">OwnedBy.</param>
-        public DocumentRelationships(DocumentOwnedBy OwnedBy = default(DocumentOwnedBy))
+        /// <param name="Data">Data.</param>
+        public DocumentOwnedBy(List<SpaceData> Data = default(List<SpaceData>))
         {
-            this.OwnedBy = OwnedBy;
+            this.Data = Data;
         }
         
         /// <summary>
-        /// Gets or Sets OwnedBy
+        /// Gets or Sets Data
         /// </summary>
-        [DataMember(Name="ownedBy", EmitDefaultValue=false)]
-        public DocumentOwnedBy OwnedBy { get; set; }
+        [DataMember(Name="data", EmitDefaultValue=false)]
+        public List<SpaceData> Data { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -52,8 +52,8 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class DocumentRelationships {\n");
-            sb.Append("  OwnedBy: ").Append(OwnedBy).Append("\n");
+            sb.Append("class DocumentOwnedBy {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -74,24 +74,24 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as DocumentRelationships);
+            return this.Equals(input as DocumentOwnedBy);
         }
 
         /// <summary>
-        /// Returns true if DocumentRelationships instances are equal
+        /// Returns true if DocumentOwnedBy instances are equal
         /// </summary>
-        /// <param name="input">Instance of DocumentRelationships to be compared</param>
+        /// <param name="input">Instance of DocumentOwnedBy to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(DocumentRelationships input)
+        public bool Equals(DocumentOwnedBy input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.OwnedBy == input.OwnedBy ||
-                    (this.OwnedBy != null &&
-                    this.OwnedBy.Equals(input.OwnedBy))
+                    this.Data == input.Data ||
+                    this.Data != null &&
+                    this.Data.SequenceEqual(input.Data)
                 );
         }
 
@@ -104,8 +104,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.OwnedBy != null)
-                    hashCode = hashCode * 59 + this.OwnedBy.GetHashCode();
+                if (this.Data != null)
+                    hashCode = hashCode * 59 + this.Data.GetHashCode();
                 return hashCode;
             }
         }

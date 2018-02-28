@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ContentTypeFromMessage** | **bool?** |  | [optional] 
 **BodyAsString** | **string** |  | [optional] 
+**ContentTypeFromMessage** | **bool?** |  | [optional] 
 **Headers** | **Dictionary&lt;string, List&lt;string&gt;&gt;** |  | [optional] 
 **MediaType** | [**MediaType**](MediaType.md) |  | [optional] 
 

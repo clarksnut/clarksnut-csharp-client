@@ -67,20 +67,20 @@ namespace IO.Swagger.Test
 
 
         /// <summary>
-        /// Test the property 'ContentTypeFromMessage'
-        /// </summary>
-        [Test]
-        public void ContentTypeFromMessageTest()
-        {
-            // TODO unit test for the property 'ContentTypeFromMessage'
-        }
-        /// <summary>
         /// Test the property 'BodyAsString'
         /// </summary>
         [Test]
         public void BodyAsStringTest()
         {
             // TODO unit test for the property 'BodyAsString'
+        }
+        /// <summary>
+        /// Test the property 'ContentTypeFromMessage'
+        /// </summary>
+        [Test]
+        public void ContentTypeFromMessageTest()
+        {
+            // TODO unit test for the property 'ContentTypeFromMessage'
         }
         /// <summary>
         /// Test the property 'Headers'
