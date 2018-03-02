@@ -283,7 +283,7 @@ namespace IO.Swagger.Api
         public ApiResponse< GenericDataRepresentationListRequestData > GetRequestAccessWithHttpInfo (List<string> space = null, string status = null)
         {
 
-            var localVarPath = "/request-access";
+            var localVarPath = "/api/request-access";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -351,7 +351,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListRequestData>> GetRequestAccessAsyncWithHttpInfo (List<string> space = null, string status = null)
         {
 
-            var localVarPath = "/request-access";
+            var localVarPath = "/api/request-access";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -415,7 +415,7 @@ namespace IO.Swagger.Api
         public ApiResponse<Object> RequestAccessToSpaceWithHttpInfo (RequestRepresentation body = null)
         {
 
-            var localVarPath = "/request-access";
+            var localVarPath = "/api/request-access";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -486,7 +486,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Object>> RequestAccessToSpaceAsyncWithHttpInfo (RequestRepresentation body = null)
         {
 
-            var localVarPath = "/request-access";
+            var localVarPath = "/api/request-access";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -561,7 +561,7 @@ namespace IO.Swagger.Api
             if (requestId == null)
                 throw new ApiException(400, "Missing required parameter 'requestId' when calling RequestAccessApi->UpdateAccessSpace");
 
-            var localVarPath = "/request-access/{requestId}";
+            var localVarPath = "/api/request-access/{requestId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -638,7 +638,7 @@ namespace IO.Swagger.Api
             if (requestId == null)
                 throw new ApiException(400, "Missing required parameter 'requestId' when calling RequestAccessApi->UpdateAccessSpace");
 
-            var localVarPath = "/request-access/{requestId}";
+            var localVarPath = "/api/request-access/{requestId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);

@@ -84,7 +84,8 @@ namespace IO.Swagger.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string username = null;
-            //var response = instance.GetUsers(username);
+            //string filterText = null;
+            //var response = instance.GetUsers(username, filterText);
             //Assert.IsInstanceOf<GenericDataRepresentationListUserData> (response, "response is GenericDataRepresentationListUserData");
         }
         

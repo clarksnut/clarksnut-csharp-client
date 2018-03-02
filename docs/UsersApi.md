@@ -71,7 +71,7 @@ No authorization required
 
 <a name="getusers"></a>
 # **GetUsers**
-> GenericDataRepresentationListUserData GetUsers (string username = null)
+> GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null)
 
 Get Users
 
@@ -93,11 +93,12 @@ namespace Example
         {
             var apiInstance = new UsersApi();
             var username = username_example;  // string | Username (optional) 
+            var filterText = filterText_example;  // string | Filter Text (optional) 
 
             try
             {
                 // Get Users
-                GenericDataRepresentationListUserData result = apiInstance.GetUsers(username);
+                GenericDataRepresentationListUserData result = apiInstance.GetUsers(username, filterText);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -114,6 +115,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **string**| Username | [optional] 
+ **filterText** | **string**| Filter Text | [optional] 
 
 ### Return type
 

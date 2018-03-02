@@ -53,8 +53,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>GenericDataRepresentationListUserData</returns>
-        GenericDataRepresentationListUserData GetUsers (string username = null);
+        GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null);
 
         /// <summary>
         /// Get Users
@@ -64,8 +65,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
-        ApiResponse<GenericDataRepresentationListUserData> GetUsersWithHttpInfo (string username = null);
+        ApiResponse<GenericDataRepresentationListUserData> GetUsersWithHttpInfo (string username = null, string filterText = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -97,8 +99,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>Task of GenericDataRepresentationListUserData</returns>
-        System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null);
+        System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null, string filterText = null);
 
         /// <summary>
         /// Get Users
@@ -108,8 +111,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null);
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null, string filterText = null);
         #endregion Asynchronous Operations
     }
 
@@ -350,10 +354,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>GenericDataRepresentationListUserData</returns>
-        public GenericDataRepresentationListUserData GetUsers (string username = null)
+        public GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null)
         {
-             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = GetUsersWithHttpInfo(username);
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = GetUsersWithHttpInfo(username, filterText);
              return localVarResponse.Data;
         }
 
@@ -362,8 +367,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
-        public ApiResponse< GenericDataRepresentationListUserData > GetUsersWithHttpInfo (string username = null)
+        public ApiResponse< GenericDataRepresentationListUserData > GetUsersWithHttpInfo (string username = null, string filterText = null)
         {
 
             var localVarPath = "/api/users";
@@ -389,6 +395,7 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (username != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "username", username)); // query parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
 
 
             // make the HTTP request
@@ -414,10 +421,11 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>Task of GenericDataRepresentationListUserData</returns>
-        public async System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null)
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null, string filterText = null)
         {
-             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = await GetUsersAsyncWithHttpInfo(username);
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = await GetUsersAsyncWithHttpInfo(username, filterText);
              return localVarResponse.Data;
 
         }
@@ -427,8 +435,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null, string filterText = null)
         {
 
             var localVarPath = "/api/users";
@@ -454,6 +463,7 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (username != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "username", username)); // query parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
 
 
             // make the HTTP request

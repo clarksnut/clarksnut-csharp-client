@@ -111,9 +111,9 @@ Class | Method | HTTP request | Description
 *PartiesApi* | [**GetParties**](docs/PartiesApi.md#getparties) | **GET** /api/parties | Get parties
 *ProfileApi* | [**CurrentUser**](docs/ProfileApi.md#currentuser) | **PUT** /api/profile | Update User Profile
 *ProfileApi* | [**GetCurrentUser**](docs/ProfileApi.md#getcurrentuser) | **GET** /api/profile | Return User Profile
-*RequestAccessApi* | [**GetRequestAccess**](docs/RequestAccessApi.md#getrequestaccess) | **GET** /request-access | Get Request accesses
-*RequestAccessApi* | [**RequestAccessToSpace**](docs/RequestAccessApi.md#requestaccesstospace) | **POST** /request-access | Request access
-*RequestAccessApi* | [**UpdateAccessSpace**](docs/RequestAccessApi.md#updateaccessspace) | **PUT** /request-access/{requestId} | Update request
+*RequestAccessApi* | [**GetRequestAccess**](docs/RequestAccessApi.md#getrequestaccess) | **GET** /api/request-access | Get Request accesses
+*RequestAccessApi* | [**RequestAccessToSpace**](docs/RequestAccessApi.md#requestaccesstospace) | **POST** /api/request-access | Request access
+*RequestAccessApi* | [**UpdateAccessSpace**](docs/RequestAccessApi.md#updateaccessspace) | **PUT** /api/request-access/{requestId} | Update request
 *SpacesApi* | [**CreateSpace**](docs/SpacesApi.md#createspace) | **POST** /api/spaces | Create Space
 *SpacesApi* | [**GetSpace**](docs/SpacesApi.md#getspace) | **GET** /api/spaces/{spaceId} | Get Space
 *SpacesApi* | [**GetSpaces**](docs/SpacesApi.md#getspaces) | **GET** /api/spaces | Get Spaces
