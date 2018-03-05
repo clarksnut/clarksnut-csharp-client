@@ -25,10 +25,56 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get Document
+        /// Print Document
         /// </summary>
         /// <remarks>
-        /// This will return a document
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns></returns>
+        void DownloadPdf (string documentId, string theme = null, string format = null);
+
+        /// <summary>
+        /// Print Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DownloadPdfWithHttpInfo (string documentId, string theme = null, string format = null);
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns></returns>
+        void DownloadXml (string documentId);
+
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DownloadXmlWithHttpInfo (string documentId);
+        /// <summary>
+        /// Return one Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -36,63 +82,42 @@ namespace IO.Swagger.Api
         DocumentRepresentation GetDocument (string documentId);
 
         /// <summary>
-        /// Get Document
+        /// Return one Document
         /// </summary>
         /// <remarks>
-        /// This will return a document
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
         /// <returns>ApiResponse of DocumentRepresentation</returns>
         ApiResponse<DocumentRepresentation> GetDocumentWithHttpInfo (string documentId);
         /// <summary>
-        /// Get Documents
+        /// Return List of Documents
         /// </summary>
         /// <remarks>
-        /// This will search just on Owned and Collaborated Spaces
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>GenericDataRepresentationListDocumentData</returns>
-        GenericDataRepresentationListDocumentData GetDocuments (string q = null, int? offset = null, int? limit = null, List<string> space = null);
+        GenericDataRepresentationListDocumentData GetDocuments (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
 
         /// <summary>
-        /// Get Documents
+        /// Return List of Documents
         /// </summary>
         /// <remarks>
-        /// This will search just on Owned and Collaborated Spaces
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListDocumentData</returns>
-        ApiResponse<GenericDataRepresentationListDocumentData> GetDocumentsWithHttpInfo (string q = null, int? offset = null, int? limit = null, List<string> space = null);
-        /// <summary>
-        /// Download Document
-        /// </summary>
-        /// <remarks>
-        /// This will download the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns></returns>
-        void GetXml (string documentId);
-
-        /// <summary>
-        /// Download Document
-        /// </summary>
-        /// <remarks>
-        /// This will download the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetXmlWithHttpInfo (string documentId);
+        ApiResponse<GenericDataRepresentationListDocumentData> GetDocumentsWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
         /// <summary>
         /// Import Document
         /// </summary>
@@ -115,35 +140,10 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ImportDocumentWithHttpInfo (MultipartFormDataInput body = null);
         /// <summary>
-        /// Print Document
-        /// </summary>
-        /// <remarks>
-        /// This will print the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns></returns>
-        void PrintDocument (string documentId, string theme = null, string format = null);
-
-        /// <summary>
-        /// Print Document
-        /// </summary>
-        /// <remarks>
-        /// This will print the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PrintDocumentWithHttpInfo (string documentId, string theme = null, string format = null);
-        /// <summary>
         /// Search Document
         /// </summary>
         /// <remarks>
-        /// This will search document in advanced mode
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -154,17 +154,17 @@ namespace IO.Swagger.Api
         /// Search Document
         /// </summary>
         /// <remarks>
-        /// This will search document in advanced mode
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListDocumentData</returns>
         ApiResponse<GenericDataRepresentationListDocumentData> SearchDocumentsWithHttpInfo (DocumentQueryRepresentation body = null);
         /// <summary>
-        /// Update Document
+        /// Update a Document
         /// </summary>
         /// <remarks>
-        /// This will update the document just for current user
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -173,10 +173,10 @@ namespace IO.Swagger.Api
         DocumentRepresentation UpdateDocument (string documentId, DocumentRepresentation body = null);
 
         /// <summary>
-        /// Update Document
+        /// Update a Document
         /// </summary>
         /// <remarks>
-        /// This will update the document just for current user
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -186,10 +186,56 @@ namespace IO.Swagger.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get Document
+        /// Print Document
         /// </summary>
         /// <remarks>
-        /// This will return a document
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadPdfAsync (string documentId, string theme = null, string format = null);
+
+        /// <summary>
+        /// Print Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DownloadPdfAsyncWithHttpInfo (string documentId, string theme = null, string format = null);
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadXmlAsync (string documentId);
+
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DownloadXmlAsyncWithHttpInfo (string documentId);
+        /// <summary>
+        /// Return one Document
+        /// </summary>
+        /// <remarks>
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -197,63 +243,42 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<DocumentRepresentation> GetDocumentAsync (string documentId);
 
         /// <summary>
-        /// Get Document
+        /// Return one Document
         /// </summary>
         /// <remarks>
-        /// This will return a document
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
         /// <returns>Task of ApiResponse (DocumentRepresentation)</returns>
         System.Threading.Tasks.Task<ApiResponse<DocumentRepresentation>> GetDocumentAsyncWithHttpInfo (string documentId);
         /// <summary>
-        /// Get Documents
+        /// Return List of Documents
         /// </summary>
         /// <remarks>
-        /// This will search just on Owned and Collaborated Spaces
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>Task of GenericDataRepresentationListDocumentData</returns>
-        System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> GetDocumentsAsync (string q = null, int? offset = null, int? limit = null, List<string> space = null);
+        System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> GetDocumentsAsync (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
 
         /// <summary>
-        /// Get Documents
+        /// Return List of Documents
         /// </summary>
         /// <remarks>
-        /// This will search just on Owned and Collaborated Spaces
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListDocumentData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> GetDocumentsAsyncWithHttpInfo (string q = null, int? offset = null, int? limit = null, List<string> space = null);
-        /// <summary>
-        /// Download Document
-        /// </summary>
-        /// <remarks>
-        /// This will download the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetXmlAsync (string documentId);
-
-        /// <summary>
-        /// Download Document
-        /// </summary>
-        /// <remarks>
-        /// This will download the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetXmlAsyncWithHttpInfo (string documentId);
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> GetDocumentsAsyncWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
         /// <summary>
         /// Import Document
         /// </summary>
@@ -276,35 +301,10 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ImportDocumentAsyncWithHttpInfo (MultipartFormDataInput body = null);
         /// <summary>
-        /// Print Document
-        /// </summary>
-        /// <remarks>
-        /// This will print the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PrintDocumentAsync (string documentId, string theme = null, string format = null);
-
-        /// <summary>
-        /// Print Document
-        /// </summary>
-        /// <remarks>
-        /// This will print the document
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PrintDocumentAsyncWithHttpInfo (string documentId, string theme = null, string format = null);
-        /// <summary>
         /// Search Document
         /// </summary>
         /// <remarks>
-        /// This will search document in advanced mode
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -315,17 +315,17 @@ namespace IO.Swagger.Api
         /// Search Document
         /// </summary>
         /// <remarks>
-        /// This will search document in advanced mode
+        /// Search on allowed user (session) spaces
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListDocumentData)</returns>
         System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> SearchDocumentsAsyncWithHttpInfo (DocumentQueryRepresentation body = null);
         /// <summary>
-        /// Update Document
+        /// Update a Document
         /// </summary>
         /// <remarks>
-        /// This will update the document just for current user
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -334,10 +334,10 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<DocumentRepresentation> UpdateDocumentAsync (string documentId, DocumentRepresentation body = null);
 
         /// <summary>
-        /// Update Document
+        /// Update a Document
         /// </summary>
         /// <remarks>
-        /// This will update the document just for current user
+        /// User need to have access to the Space owner of the document
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -445,7 +445,283 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Document This will return a document
+        /// Print Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns></returns>
+        public void DownloadPdf (string documentId, string theme = null, string format = null)
+        {
+             DownloadPdfWithHttpInfo(documentId, theme, format);
+        }
+
+        /// <summary>
+        /// Print Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DownloadPdfWithHttpInfo (string documentId, string theme = null, string format = null)
+        {
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->DownloadPdf");
+
+            var localVarPath = "/api/documents/{documentId}/print";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (theme != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "theme", theme)); // query parameter
+            if (format != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "format", format)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadPdf", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Print Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadPdfAsync (string documentId, string theme = null, string format = null)
+        {
+             await DownloadPdfAsyncWithHttpInfo(documentId, theme, format);
+
+        }
+
+        /// <summary>
+        /// Print Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DownloadPdfAsyncWithHttpInfo (string documentId, string theme = null, string format = null)
+        {
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->DownloadPdf");
+
+            var localVarPath = "/api/documents/{documentId}/print";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (theme != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "theme", theme)); // query parameter
+            if (format != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "format", format)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadPdf", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Download Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns></returns>
+        public void DownloadXml (string documentId)
+        {
+             DownloadXmlWithHttpInfo(documentId);
+        }
+
+        /// <summary>
+        /// Download Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DownloadXmlWithHttpInfo (string documentId)
+        {
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->DownloadXml");
+
+            var localVarPath = "/api/documents/{documentId}/download";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadXml", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Download Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadXmlAsync (string documentId)
+        {
+             await DownloadXmlAsyncWithHttpInfo(documentId);
+
+        }
+
+        /// <summary>
+        /// Download Document User need to have access to the Space owner of the document
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DownloadXmlAsyncWithHttpInfo (string documentId)
+        {
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->DownloadXml");
+
+            var localVarPath = "/api/documents/{documentId}/download";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadXml", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Return one Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -457,7 +733,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Document This will return a document
+        /// Return one Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -512,7 +788,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Document This will return a document
+        /// Return one Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -525,7 +801,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Document This will return a document
+        /// Return one Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -580,30 +856,30 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Documents This will search just on Owned and Collaborated Spaces
+        /// Return List of Documents Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>GenericDataRepresentationListDocumentData</returns>
-        public GenericDataRepresentationListDocumentData GetDocuments (string q = null, int? offset = null, int? limit = null, List<string> space = null)
+        public GenericDataRepresentationListDocumentData GetDocuments (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
         {
-             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = GetDocumentsWithHttpInfo(q, offset, limit, space);
+             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = GetDocumentsWithHttpInfo(filterText, offset, limit, space);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get Documents This will search just on Owned and Collaborated Spaces
+        /// Return List of Documents Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListDocumentData</returns>
-        public ApiResponse< GenericDataRepresentationListDocumentData > GetDocumentsWithHttpInfo (string q = null, int? offset = null, int? limit = null, List<string> space = null)
+        public ApiResponse< GenericDataRepresentationListDocumentData > GetDocumentsWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
         {
 
             var localVarPath = "/api/documents";
@@ -628,7 +904,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (q != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "q", q)); // query parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
@@ -653,31 +929,31 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Documents This will search just on Owned and Collaborated Spaces
+        /// Return List of Documents Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>Task of GenericDataRepresentationListDocumentData</returns>
-        public async System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> GetDocumentsAsync (string q = null, int? offset = null, int? limit = null, List<string> space = null)
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> GetDocumentsAsync (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
         {
-             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = await GetDocumentsAsyncWithHttpInfo(q, offset, limit, space);
+             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = await GetDocumentsAsyncWithHttpInfo(filterText, offset, limit, space);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get Documents This will search just on Owned and Collaborated Spaces
+        /// Return List of Documents Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q">A text for filter results (optional)</param>
-        /// <param name="offset">The first position of array results (optional, default to 0)</param>
-        /// <param name="limit">The max number of results (optional, default to 10)</param>
-        /// <param name="space">List of space ids to search in. If null or empty all allowed spaces of user will be used (optional)</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListDocumentData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> GetDocumentsAsyncWithHttpInfo (string q = null, int? offset = null, int? limit = null, List<string> space = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> GetDocumentsAsyncWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
         {
 
             var localVarPath = "/api/documents";
@@ -702,7 +978,7 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (q != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "q", q)); // query parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
@@ -724,139 +1000,6 @@ namespace IO.Swagger.Api
             return new ApiResponse<GenericDataRepresentationListDocumentData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (GenericDataRepresentationListDocumentData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListDocumentData)));
-        }
-
-        /// <summary>
-        /// Download Document This will download the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns></returns>
-        public void GetXml (string documentId)
-        {
-             GetXmlWithHttpInfo(documentId);
-        }
-
-        /// <summary>
-        /// Download Document This will download the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> GetXmlWithHttpInfo (string documentId)
-        {
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->GetXml");
-
-            var localVarPath = "/api/documents/{documentId}/download";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/xml"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetXml", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// Download Document This will download the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetXmlAsync (string documentId)
-        {
-             await GetXmlAsyncWithHttpInfo(documentId);
-
-        }
-
-        /// <summary>
-        /// Download Document This will download the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> GetXmlAsyncWithHttpInfo (string documentId)
-        {
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->GetXml");
-
-            var localVarPath = "/api/documents/{documentId}/download";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/xml"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetXml", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
         }
 
         /// <summary>
@@ -1001,150 +1144,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Print Document This will print the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns></returns>
-        public void PrintDocument (string documentId, string theme = null, string format = null)
-        {
-             PrintDocumentWithHttpInfo(documentId, theme, format);
-        }
-
-        /// <summary>
-        /// Print Document This will print the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> PrintDocumentWithHttpInfo (string documentId, string theme = null, string format = null)
-        {
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->PrintDocument");
-
-            var localVarPath = "/api/documents/{documentId}/print";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
-            if (theme != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "theme", theme)); // query parameter
-            if (format != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "format", format)); // query parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("PrintDocument", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// Print Document This will print the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PrintDocumentAsync (string documentId, string theme = null, string format = null)
-        {
-             await PrintDocumentAsyncWithHttpInfo(documentId, theme, format);
-
-        }
-
-        /// <summary>
-        /// Print Document This will print the document
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document Id</param>
-        /// <param name="theme">Theme (optional)</param>
-        /// <param name="format">format (optional, default to pdf)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PrintDocumentAsyncWithHttpInfo (string documentId, string theme = null, string format = null)
-        {
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling DocumentsApi->PrintDocument");
-
-            var localVarPath = "/api/documents/{documentId}/print";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
-            if (theme != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "theme", theme)); // query parameter
-            if (format != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "format", format)); // query parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("PrintDocument", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// Search Document This will search document in advanced mode
+        /// Search Document Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -1156,7 +1156,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Search Document This will search document in advanced mode
+        /// Search Document Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -1215,7 +1215,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Search Document This will search document in advanced mode
+        /// Search Document Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -1228,7 +1228,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Search Document This will search document in advanced mode
+        /// Search Document Search on allowed user (session) spaces
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -1287,7 +1287,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update Document This will update the document just for current user
+        /// Update a Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -1300,7 +1300,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update Document This will update the document just for current user
+        /// Update a Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -1364,7 +1364,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update Document This will update the document just for current user
+        /// Update a Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>
@@ -1378,7 +1378,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update Document This will update the document just for current user
+        /// Update a Document User need to have access to the Space owner of the document
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentId">Document Id</param>

@@ -25,10 +25,33 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create Space
+        /// Add new Collaborator
         /// </summary>
         /// <remarks>
-        /// This will create a space. [user] role required
+        /// [user] role required
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        void AddSpaceCollaborators (string spaceId, TypedGenericDataRepresentationListUserData body = null);
+
+        /// <summary>
+        /// Add new Collaborator
+        /// </summary>
+        /// <remarks>
+        /// [user] role required
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AddSpaceCollaboratorsWithHttpInfo (string spaceId, TypedGenericDataRepresentationListUserData body = null);
+        /// <summary>
+        /// Create new Space
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -36,20 +59,41 @@ namespace IO.Swagger.Api
         void CreateSpace (SpaceRepresentation body = null);
 
         /// <summary>
-        /// Create Space
+        /// Create new Space
         /// </summary>
         /// <remarks>
-        /// This will create a space. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> CreateSpaceWithHttpInfo (SpaceRepresentation body = null);
         /// <summary>
-        /// Get Space
+        /// Delete space
         /// </summary>
         /// <remarks>
-        /// This will get a space. [view-spaces] role required
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns></returns>
+        void DeleteUserSpace (string spaceId);
+
+        /// <summary>
+        /// Delete space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteUserSpaceWithHttpInfo (string spaceId);
+        /// <summary>
+        /// Return one Space
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
@@ -57,49 +101,143 @@ namespace IO.Swagger.Api
         SpaceRepresentation GetSpace (string spaceId);
 
         /// <summary>
-        /// Get Space
+        /// Return one Space
         /// </summary>
         /// <remarks>
-        /// This will get a space. [view-spaces] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
         /// <returns>ApiResponse of SpaceRepresentation</returns>
         ApiResponse<SpaceRepresentation> GetSpaceWithHttpInfo (string spaceId);
         /// <summary>
-        /// Get Spaces
+        /// Return list of Collaborators
         /// </summary>
         /// <remarks>
-        /// This will search spaces. [view-spaces] role required
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListUserData</returns>
+        GenericDataRepresentationListUserData GetSpaceCollaborators (string spaceId, int? offset = null, int? limit = null);
+
+        /// <summary>
+        /// Return list of Collaborators
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
+        ApiResponse<GenericDataRepresentationListUserData> GetSpaceCollaboratorsWithHttpInfo (string spaceId, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Return list of Spaces
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>GenericDataRepresentationListSpaceData</returns>
-        GenericDataRepresentationListSpaceData GetSpaces (string assignedId = null, string q = null, int? offset = null, int? limit = null);
+        GenericDataRepresentationListSpaceData GetSpaces (string assignedId = null, string filterText = null, int? offset = null, int? limit = null);
 
         /// <summary>
-        /// Get Spaces
+        /// Return list of Spaces
         /// </summary>
         /// <remarks>
-        /// This will search spaces. [view-spaces] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListSpaceData</returns>
-        ApiResponse<GenericDataRepresentationListSpaceData> GetSpacesWithHttpInfo (string assignedId = null, string q = null, int? offset = null, int? limit = null);
+        ApiResponse<GenericDataRepresentationListSpaceData> GetSpacesWithHttpInfo (string assignedId = null, string filterText = null, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns></returns>
+        void RemoveSpaceCollaborators (string spaceId, string userId);
+
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveSpaceCollaboratorsWithHttpInfo (string spaceId, string userId);
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>SpaceRepresentation</returns>
+        SpaceRepresentation UpdateUserSpace (string spaceId, SpaceRepresentation body = null);
+
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of SpaceRepresentation</returns>
+        ApiResponse<SpaceRepresentation> UpdateUserSpaceWithHttpInfo (string spaceId, SpaceRepresentation body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Create Space
+        /// Add new Collaborator
         /// </summary>
         /// <remarks>
-        /// This will create a space. [user] role required
+        /// [user] role required
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task AddSpaceCollaboratorsAsync (string spaceId, TypedGenericDataRepresentationListUserData body = null);
+
+        /// <summary>
+        /// Add new Collaborator
+        /// </summary>
+        /// <remarks>
+        /// [user] role required
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddSpaceCollaboratorsAsyncWithHttpInfo (string spaceId, TypedGenericDataRepresentationListUserData body = null);
+        /// <summary>
+        /// Create new Space
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -107,20 +245,41 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task CreateSpaceAsync (SpaceRepresentation body = null);
 
         /// <summary>
-        /// Create Space
+        /// Create new Space
         /// </summary>
         /// <remarks>
-        /// This will create a space. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> CreateSpaceAsyncWithHttpInfo (SpaceRepresentation body = null);
         /// <summary>
-        /// Get Space
+        /// Delete space
         /// </summary>
         /// <remarks>
-        /// This will get a space. [view-spaces] role required
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteUserSpaceAsync (string spaceId);
+
+        /// <summary>
+        /// Delete space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserSpaceAsyncWithHttpInfo (string spaceId);
+        /// <summary>
+        /// Return one Space
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
@@ -128,42 +287,113 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<SpaceRepresentation> GetSpaceAsync (string spaceId);
 
         /// <summary>
-        /// Get Space
+        /// Return one Space
         /// </summary>
         /// <remarks>
-        /// This will get a space. [view-spaces] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
         /// <returns>Task of ApiResponse (SpaceRepresentation)</returns>
         System.Threading.Tasks.Task<ApiResponse<SpaceRepresentation>> GetSpaceAsyncWithHttpInfo (string spaceId);
         /// <summary>
-        /// Get Spaces
+        /// Return list of Collaborators
         /// </summary>
         /// <remarks>
-        /// This will search spaces. [view-spaces] role required
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListUserData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetSpaceCollaboratorsAsync (string spaceId, int? offset = null, int? limit = null);
+
+        /// <summary>
+        /// Return list of Collaborators
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetSpaceCollaboratorsAsyncWithHttpInfo (string spaceId, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Return list of Spaces
+        /// </summary>
+        /// <remarks>
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of GenericDataRepresentationListSpaceData</returns>
-        System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetSpacesAsync (string assignedId = null, string q = null, int? offset = null, int? limit = null);
+        System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetSpacesAsync (string assignedId = null, string filterText = null, int? offset = null, int? limit = null);
 
         /// <summary>
-        /// Get Spaces
+        /// Return list of Spaces
         /// </summary>
         /// <remarks>
-        /// This will search spaces. [view-spaces] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListSpaceData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetSpacesAsyncWithHttpInfo (string assignedId = null, string q = null, int? offset = null, int? limit = null);
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetSpacesAsyncWithHttpInfo (string assignedId = null, string filterText = null, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveSpaceCollaboratorsAsync (string spaceId, string userId);
+
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveSpaceCollaboratorsAsyncWithHttpInfo (string spaceId, string userId);
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of SpaceRepresentation</returns>
+        System.Threading.Tasks.Task<SpaceRepresentation> UpdateUserSpaceAsync (string spaceId, SpaceRepresentation body = null);
+
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (SpaceRepresentation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SpaceRepresentation>> UpdateUserSpaceAsyncWithHttpInfo (string spaceId, SpaceRepresentation body = null);
         #endregion Asynchronous Operations
     }
 
@@ -265,7 +495,160 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Create Space This will create a space. [user] role required
+        /// Add new Collaborator [user] role required
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        public void AddSpaceCollaborators (string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+             AddSpaceCollaboratorsWithHttpInfo(spaceId, body);
+        }
+
+        /// <summary>
+        /// Add new Collaborator [user] role required
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AddSpaceCollaboratorsWithHttpInfo (string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->AddSpaceCollaborators");
+
+            var localVarPath = "/api/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Add new Collaborator [user] role required
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task AddSpaceCollaboratorsAsync (string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+             await AddSpaceCollaboratorsAsyncWithHttpInfo(spaceId, body);
+
+        }
+
+        /// <summary>
+        /// Add new Collaborator [user] role required
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AddSpaceCollaboratorsAsyncWithHttpInfo (string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->AddSpaceCollaborators");
+
+            var localVarPath = "/api/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Create new Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -276,7 +659,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Create Space This will create a space. [user] role required
+        /// Create new Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -335,7 +718,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Create Space This will create a space. [user] role required
+        /// Create new Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -347,7 +730,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Create Space This will create a space. [user] role required
+        /// Create new Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -406,7 +789,140 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Space This will get a space. [view-spaces] role required
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns></returns>
+        public void DeleteUserSpace (string spaceId)
+        {
+             DeleteUserSpaceWithHttpInfo(spaceId);
+        }
+
+        /// <summary>
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteUserSpaceWithHttpInfo (string spaceId)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->DeleteUserSpace");
+
+            var localVarPath = "/api/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteUserSpaceAsync (string spaceId)
+        {
+             await DeleteUserSpaceAsyncWithHttpInfo(spaceId);
+
+        }
+
+        /// <summary>
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserSpaceAsyncWithHttpInfo (string spaceId)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->DeleteUserSpace");
+
+            var localVarPath = "/api/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Return one Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
@@ -418,7 +934,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Space This will get a space. [view-spaces] role required
+        /// Return one Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
@@ -473,7 +989,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Space This will get a space. [view-spaces] role required
+        /// Return one Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
@@ -486,7 +1002,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Space This will get a space. [view-spaces] role required
+        /// Return one Space 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="spaceId">Space Id</param>
@@ -541,30 +1057,177 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Spaces This will search spaces. [view-spaces] role required
+        /// Return list of Collaborators 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="spaceId">Space Id</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
-        /// <returns>GenericDataRepresentationListSpaceData</returns>
-        public GenericDataRepresentationListSpaceData GetSpaces (string assignedId = null, string q = null, int? offset = null, int? limit = null)
+        /// <returns>GenericDataRepresentationListUserData</returns>
+        public GenericDataRepresentationListUserData GetSpaceCollaborators (string spaceId, int? offset = null, int? limit = null)
         {
-             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = GetSpacesWithHttpInfo(assignedId, q, offset, limit);
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = GetSpaceCollaboratorsWithHttpInfo(spaceId, offset, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get Spaces This will search spaces. [view-spaces] role required
+        /// Return list of Collaborators 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
+        public ApiResponse< GenericDataRepresentationListUserData > GetSpaceCollaboratorsWithHttpInfo (string spaceId, int? offset = null, int? limit = null)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->GetSpaceCollaborators");
+
+            var localVarPath = "/api/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListUserData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListUserData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListUserData)));
+        }
+
+        /// <summary>
+        /// Return list of Collaborators 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListUserData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetSpaceCollaboratorsAsync (string spaceId, int? offset = null, int? limit = null)
+        {
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = await GetSpaceCollaboratorsAsyncWithHttpInfo(spaceId, offset, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Return list of Collaborators 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetSpaceCollaboratorsAsyncWithHttpInfo (string spaceId, int? offset = null, int? limit = null)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->GetSpaceCollaborators");
+
+            var localVarPath = "/api/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListUserData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListUserData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListUserData)));
+        }
+
+        /// <summary>
+        /// Return list of Spaces 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListSpaceData</returns>
+        public GenericDataRepresentationListSpaceData GetSpaces (string assignedId = null, string filterText = null, int? offset = null, int? limit = null)
+        {
+             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = GetSpacesWithHttpInfo(assignedId, filterText, offset, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return list of Spaces 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assignedId">Space Assigned Id (optional)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListSpaceData</returns>
-        public ApiResponse< GenericDataRepresentationListSpaceData > GetSpacesWithHttpInfo (string assignedId = null, string q = null, int? offset = null, int? limit = null)
+        public ApiResponse< GenericDataRepresentationListSpaceData > GetSpacesWithHttpInfo (string assignedId = null, string filterText = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/api/spaces";
@@ -590,7 +1253,7 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (assignedId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assignedId", assignedId)); // query parameter
-            if (q != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "q", q)); // query parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
@@ -614,31 +1277,31 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Spaces This will search spaces. [view-spaces] role required
+        /// Return list of Spaces 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of GenericDataRepresentationListSpaceData</returns>
-        public async System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetSpacesAsync (string assignedId = null, string q = null, int? offset = null, int? limit = null)
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetSpacesAsync (string assignedId = null, string filterText = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = await GetSpacesAsyncWithHttpInfo(assignedId, q, offset, limit);
+             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = await GetSpacesAsyncWithHttpInfo(assignedId, filterText, offset, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get Spaces This will search spaces. [view-spaces] role required
+        /// Return list of Spaces 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assignedId">Space Assigned Id (optional)</param>
-        /// <param name="q">Full text search value (optional, default to *)</param>
+        /// <param name="filterText">Filter Text (optional)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListSpaceData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetSpacesAsyncWithHttpInfo (string assignedId = null, string q = null, int? offset = null, int? limit = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetSpacesAsyncWithHttpInfo (string assignedId = null, string filterText = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/api/spaces";
@@ -664,7 +1327,7 @@ namespace IO.Swagger.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (assignedId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assignedId", assignedId)); // query parameter
-            if (q != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "q", q)); // query parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
@@ -685,6 +1348,306 @@ namespace IO.Swagger.Api
             return new ApiResponse<GenericDataRepresentationListSpaceData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (GenericDataRepresentationListSpaceData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListSpaceData)));
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns></returns>
+        public void RemoveSpaceCollaborators (string spaceId, string userId)
+        {
+             RemoveSpaceCollaboratorsWithHttpInfo(spaceId, userId);
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> RemoveSpaceCollaboratorsWithHttpInfo (string spaceId, string userId)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->RemoveSpaceCollaborators");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling SpacesApi->RemoveSpaceCollaborators");
+
+            var localVarPath = "/api/spaces/{spaceId}/collaborators/{userId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RemoveSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveSpaceCollaboratorsAsync (string spaceId, string userId)
+        {
+             await RemoveSpaceCollaboratorsAsyncWithHttpInfo(spaceId, userId);
+
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="userId">User Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveSpaceCollaboratorsAsyncWithHttpInfo (string spaceId, string userId)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->RemoveSpaceCollaborators");
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling SpacesApi->RemoveSpaceCollaborators");
+
+            var localVarPath = "/api/spaces/{spaceId}/collaborators/{userId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RemoveSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>SpaceRepresentation</returns>
+        public SpaceRepresentation UpdateUserSpace (string spaceId, SpaceRepresentation body = null)
+        {
+             ApiResponse<SpaceRepresentation> localVarResponse = UpdateUserSpaceWithHttpInfo(spaceId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of SpaceRepresentation</returns>
+        public ApiResponse< SpaceRepresentation > UpdateUserSpaceWithHttpInfo (string spaceId, SpaceRepresentation body = null)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->UpdateUserSpace");
+
+            var localVarPath = "/api/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpaceRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SpaceRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpaceRepresentation)));
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of SpaceRepresentation</returns>
+        public async System.Threading.Tasks.Task<SpaceRepresentation> UpdateUserSpaceAsync (string spaceId, SpaceRepresentation body = null)
+        {
+             ApiResponse<SpaceRepresentation> localVarResponse = await UpdateUserSpaceAsyncWithHttpInfo(spaceId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (SpaceRepresentation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SpaceRepresentation>> UpdateUserSpaceAsyncWithHttpInfo (string spaceId, SpaceRepresentation body = null)
+        {
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling SpacesApi->UpdateUserSpace");
+
+            var localVarPath = "/api/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpaceRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SpaceRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpaceRepresentation)));
         }
 
     }

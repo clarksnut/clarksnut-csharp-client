@@ -65,6 +65,32 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
+        /// Test DownloadPdf
+        /// </summary>
+        [Test]
+        public void DownloadPdfTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string documentId = null;
+            //string theme = null;
+            //string format = null;
+            //instance.DownloadPdf(documentId, theme, format);
+            
+        }
+        
+        /// <summary>
+        /// Test DownloadXml
+        /// </summary>
+        [Test]
+        public void DownloadXmlTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string documentId = null;
+            //instance.DownloadXml(documentId);
+            
+        }
+        
+        /// <summary>
         /// Test GetDocument
         /// </summary>
         [Test]
@@ -83,24 +109,12 @@ namespace IO.Swagger.Test
         public void GetDocumentsTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string q = null;
+            //string filterText = null;
             //int? offset = null;
             //int? limit = null;
             //List<string> space = null;
-            //var response = instance.GetDocuments(q, offset, limit, space);
+            //var response = instance.GetDocuments(filterText, offset, limit, space);
             //Assert.IsInstanceOf<GenericDataRepresentationListDocumentData> (response, "response is GenericDataRepresentationListDocumentData");
-        }
-        
-        /// <summary>
-        /// Test GetXml
-        /// </summary>
-        [Test]
-        public void GetXmlTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string documentId = null;
-            //instance.GetXml(documentId);
-            
         }
         
         /// <summary>
@@ -112,20 +126,6 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //MultipartFormDataInput body = null;
             //instance.ImportDocument(body);
-            
-        }
-        
-        /// <summary>
-        /// Test PrintDocument
-        /// </summary>
-        [Test]
-        public void PrintDocumentTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string documentId = null;
-            //string theme = null;
-            //string format = null;
-            //instance.PrintDocument(documentId, theme, format);
             
         }
         

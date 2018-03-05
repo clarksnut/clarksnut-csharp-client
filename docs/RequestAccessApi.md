@@ -15,8 +15,6 @@ Method | HTTP request | Description
 
 Get Request accesses
 
-This will return all requests on current user. [user] role required
-
 ### Example
 ```csharp
 using System;
@@ -78,8 +76,6 @@ No authorization required
 
 Request access
 
-This will request access to space. [user] role required
-
 ### Example
 ```csharp
 using System;
@@ -137,8 +133,6 @@ No authorization required
 > void UpdateAccessSpace (string requestId, RequestRepresentation body = null)
 
 Update request
-
-This will accept or reject requests. [user] role required
 
 ### Example
 ```csharp

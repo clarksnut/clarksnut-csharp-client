@@ -71,11 +71,11 @@ namespace IO.Swagger.Test
         public void GetPartiesTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
-            //string q = null;
+            //string filterText = null;
             //int? offset = null;
             //int? limit = null;
             //List<string> space = null;
-            //var response = instance.GetParties(q, offset, limit, space);
+            //var response = instance.GetParties(filterText, offset, limit, space);
             //Assert.IsInstanceOf<GenericDataRepresentationListPartyData> (response, "response is GenericDataRepresentationListPartyData");
         }
         

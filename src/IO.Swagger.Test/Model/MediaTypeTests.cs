@@ -91,20 +91,20 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Parameters'
         }
         /// <summary>
-        /// Test the property 'WildcardType'
-        /// </summary>
-        [Test]
-        public void WildcardTypeTest()
-        {
-            // TODO unit test for the property 'WildcardType'
-        }
-        /// <summary>
         /// Test the property 'WildcardSubtype'
         /// </summary>
         [Test]
         public void WildcardSubtypeTest()
         {
             // TODO unit test for the property 'WildcardSubtype'
+        }
+        /// <summary>
+        /// Test the property 'WildcardType'
+        /// </summary>
+        [Test]
+        public void WildcardTypeTest()
+        {
+            // TODO unit test for the property 'WildcardType'
         }
 
     }

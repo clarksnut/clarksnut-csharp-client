@@ -70,16 +70,17 @@ namespace Example
 
             var apiInstance = new DocumentsApi();
             var documentId = documentId_example;  // string | Document Id
+            var theme = theme_example;  // string | Theme (optional) 
+            var format = format_example;  // string | format (optional)  (default to pdf)
 
             try
             {
-                // Get Document
-                DocumentRepresentation result = apiInstance.GetDocument(documentId);
-                Debug.WriteLine(result);
+                // Print Document
+                apiInstance.DownloadPdf(documentId, theme, format);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DocumentsApi.GetDocument: " + e.Message );
+                Debug.Print("Exception when calling DocumentsApi.DownloadPdf: " + e.Message );
             }
 
         }
@@ -94,31 +95,30 @@ All URIs are relative to *https://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DocumentsApi* | [**GetDocument**](docs/DocumentsApi.md#getdocument) | **GET** /api/documents/{documentId} | Get Document
-*DocumentsApi* | [**GetDocuments**](docs/DocumentsApi.md#getdocuments) | **GET** /api/documents | Get Documents
-*DocumentsApi* | [**GetXml**](docs/DocumentsApi.md#getxml) | **GET** /api/documents/{documentId}/download | Download Document
+*DocumentsApi* | [**DownloadPdf**](docs/DocumentsApi.md#downloadpdf) | **GET** /api/documents/{documentId}/print | Print Document
+*DocumentsApi* | [**DownloadXml**](docs/DocumentsApi.md#downloadxml) | **GET** /api/documents/{documentId}/download | Download Document
+*DocumentsApi* | [**GetDocument**](docs/DocumentsApi.md#getdocument) | **GET** /api/documents/{documentId} | Return one Document
+*DocumentsApi* | [**GetDocuments**](docs/DocumentsApi.md#getdocuments) | **GET** /api/documents | Return List of Documents
 *DocumentsApi* | [**ImportDocument**](docs/DocumentsApi.md#importdocument) | **POST** /api/documents | Import Document
-*DocumentsApi* | [**PrintDocument**](docs/DocumentsApi.md#printdocument) | **GET** /api/documents/{documentId}/print | Print Document
 *DocumentsApi* | [**SearchDocuments**](docs/DocumentsApi.md#searchdocuments) | **POST** /api/documents/search | Search Document
-*DocumentsApi* | [**UpdateDocument**](docs/DocumentsApi.md#updatedocument) | **PUT** /api/documents/{documentId} | Update Document
-*NamespacesApi* | [**AddSpaceCollaborators**](docs/NamespacesApi.md#addspacecollaborators) | **POST** /api/namespaces/{spaceId}/collaborators | Add Space SpaceCollaborators
-*NamespacesApi* | [**DeleteUserSpace**](docs/NamespacesApi.md#deleteuserspace) | **DELETE** /api/namespaces/{spaceId} | Delete space
-*NamespacesApi* | [**GetSpaceCollaborators**](docs/NamespacesApi.md#getspacecollaborators) | **GET** /api/namespaces/{spaceId}/collaborators | Get Space SpaceCollaborators
-*NamespacesApi* | [**GetUserSpace**](docs/NamespacesApi.md#getuserspace) | **GET** /api/namespaces/{spaceId} | Get Space
-*NamespacesApi* | [**GetUserSpaces**](docs/NamespacesApi.md#getuserspaces) | **GET** /api/namespaces | Get Spaces of user
-*NamespacesApi* | [**RemoveSpaceCollaborators**](docs/NamespacesApi.md#removespacecollaborators) | **DELETE** /api/namespaces/{spaceId}/collaborators/{userId} | Remove Space SpaceCollaborators
-*NamespacesApi* | [**UpdateUserSpace**](docs/NamespacesApi.md#updateuserspace) | **PUT** /api/namespaces/{spaceId} | Update space
+*DocumentsApi* | [**UpdateDocument**](docs/DocumentsApi.md#updatedocument) | **PUT** /api/documents/{documentId} | Update a Document
+*NamedSpacesApi* | [**GetUserSpaces**](docs/NamedSpacesApi.md#getuserspaces) | **GET** /api/namedspaces/{userId} | Return allowed Spaces of User
 *PartiesApi* | [**GetParties**](docs/PartiesApi.md#getparties) | **GET** /api/parties | Get parties
 *ProfileApi* | [**CurrentUser**](docs/ProfileApi.md#currentuser) | **PUT** /api/profile | Update User Profile
 *ProfileApi* | [**GetCurrentUser**](docs/ProfileApi.md#getcurrentuser) | **GET** /api/profile | Return User Profile
 *RequestAccessApi* | [**GetRequestAccess**](docs/RequestAccessApi.md#getrequestaccess) | **GET** /api/request-access | Get Request accesses
 *RequestAccessApi* | [**RequestAccessToSpace**](docs/RequestAccessApi.md#requestaccesstospace) | **POST** /api/request-access | Request access
 *RequestAccessApi* | [**UpdateAccessSpace**](docs/RequestAccessApi.md#updateaccessspace) | **PUT** /api/request-access/{requestId} | Update request
-*SpacesApi* | [**CreateSpace**](docs/SpacesApi.md#createspace) | **POST** /api/spaces | Create Space
-*SpacesApi* | [**GetSpace**](docs/SpacesApi.md#getspace) | **GET** /api/spaces/{spaceId} | Get Space
-*SpacesApi* | [**GetSpaces**](docs/SpacesApi.md#getspaces) | **GET** /api/spaces | Get Spaces
-*UsersApi* | [**GetUser**](docs/UsersApi.md#getuser) | **GET** /api/users/{userId} | Get User
-*UsersApi* | [**GetUsers**](docs/UsersApi.md#getusers) | **GET** /api/users | Get Users
+*SpacesApi* | [**AddSpaceCollaborators**](docs/SpacesApi.md#addspacecollaborators) | **POST** /api/spaces/{spaceId}/collaborators | Add new Collaborator
+*SpacesApi* | [**CreateSpace**](docs/SpacesApi.md#createspace) | **POST** /api/spaces | Create new Space
+*SpacesApi* | [**DeleteUserSpace**](docs/SpacesApi.md#deleteuserspace) | **DELETE** /api/spaces/{spaceId} | Delete space
+*SpacesApi* | [**GetSpace**](docs/SpacesApi.md#getspace) | **GET** /api/spaces/{spaceId} | Return one Space
+*SpacesApi* | [**GetSpaceCollaborators**](docs/SpacesApi.md#getspacecollaborators) | **GET** /api/spaces/{spaceId}/collaborators | Return list of Collaborators
+*SpacesApi* | [**GetSpaces**](docs/SpacesApi.md#getspaces) | **GET** /api/spaces | Return list of Spaces
+*SpacesApi* | [**RemoveSpaceCollaborators**](docs/SpacesApi.md#removespacecollaborators) | **DELETE** /api/spaces/{spaceId}/collaborators/{userId} | Remove Collaborator
+*SpacesApi* | [**UpdateUserSpace**](docs/SpacesApi.md#updateuserspace) | **PUT** /api/spaces/{spaceId} | Update space
+*UsersApi* | [**GetUser**](docs/UsersApi.md#getuser) | **GET** /api/users/{userId} | Return One User
+*UsersApi* | [**GetUsers**](docs/UsersApi.md#getusers) | **GET** /api/users | Return List of Users
 
 
 <a name="documentation-for-models"></a>

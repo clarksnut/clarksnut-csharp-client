@@ -25,10 +25,10 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get User
+        /// Return One User
         /// </summary>
         /// <remarks>
-        /// This will return the requested user. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
@@ -36,45 +36,49 @@ namespace IO.Swagger.Api
         UserRepresentation GetUser (string userId);
 
         /// <summary>
-        /// Get User
+        /// Return One User
         /// </summary>
         /// <remarks>
-        /// This will return the requested user. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
         /// <returns>ApiResponse of UserRepresentation</returns>
         ApiResponse<UserRepresentation> GetUserWithHttpInfo (string userId);
         /// <summary>
-        /// Get Users
+        /// Return List of Users
         /// </summary>
         /// <remarks>
-        /// This will search users. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>GenericDataRepresentationListUserData</returns>
-        GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null);
+        GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null, int? offset = null, int? limit = null);
 
         /// <summary>
-        /// Get Users
+        /// Return List of Users
         /// </summary>
         /// <remarks>
-        /// This will search users. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
-        ApiResponse<GenericDataRepresentationListUserData> GetUsersWithHttpInfo (string username = null, string filterText = null);
+        ApiResponse<GenericDataRepresentationListUserData> GetUsersWithHttpInfo (string username = null, string filterText = null, int? offset = null, int? limit = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get User
+        /// Return One User
         /// </summary>
         /// <remarks>
-        /// This will return the requested user. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
@@ -82,38 +86,42 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<UserRepresentation> GetUserAsync (string userId);
 
         /// <summary>
-        /// Get User
+        /// Return One User
         /// </summary>
         /// <remarks>
-        /// This will return the requested user. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
         /// <returns>Task of ApiResponse (UserRepresentation)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserRepresentation>> GetUserAsyncWithHttpInfo (string userId);
         /// <summary>
-        /// Get Users
+        /// Return List of Users
         /// </summary>
         /// <remarks>
-        /// This will search users. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of GenericDataRepresentationListUserData</returns>
-        System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null, string filterText = null);
+        System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null, string filterText = null, int? offset = null, int? limit = null);
 
         /// <summary>
-        /// Get Users
+        /// Return List of Users
         /// </summary>
         /// <remarks>
-        /// This will search users. [view-users] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null, string filterText = null);
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null, string filterText = null, int? offset = null, int? limit = null);
         #endregion Asynchronous Operations
     }
 
@@ -215,7 +223,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get User This will return the requested user. [view-users] role required
+        /// Return One User 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
@@ -227,7 +235,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get User This will return the requested user. [view-users] role required
+        /// Return One User 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
@@ -282,7 +290,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get User This will return the requested user. [view-users] role required
+        /// Return One User 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
@@ -295,7 +303,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get User This will return the requested user. [view-users] role required
+        /// Return One User 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId">User Id</param>
@@ -350,26 +358,30 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Users This will search users. [view-users] role required
+        /// Return List of Users 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>GenericDataRepresentationListUserData</returns>
-        public GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null)
+        public GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = GetUsersWithHttpInfo(username, filterText);
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = GetUsersWithHttpInfo(username, filterText, offset, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get Users This will search users. [view-users] role required
+        /// Return List of Users 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
-        public ApiResponse< GenericDataRepresentationListUserData > GetUsersWithHttpInfo (string username = null, string filterText = null)
+        public ApiResponse< GenericDataRepresentationListUserData > GetUsersWithHttpInfo (string username = null, string filterText = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/api/users";
@@ -396,6 +408,8 @@ namespace IO.Swagger.Api
 
             if (username != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "username", username)); // query parameter
             if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
 
             // make the HTTP request
@@ -417,27 +431,31 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Users This will search users. [view-users] role required
+        /// Return List of Users 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of GenericDataRepresentationListUserData</returns>
-        public async System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null, string filterText = null)
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUsersAsync (string username = null, string filterText = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = await GetUsersAsyncWithHttpInfo(username, filterText);
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = await GetUsersAsyncWithHttpInfo(username, filterText, offset, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get Users This will search users. [view-users] role required
+        /// Return List of Users 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="username">Username (optional)</param>
         /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null, string filterText = null)
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null, string filterText = null, int? offset = null, int? limit = null)
         {
 
             var localVarPath = "/api/users";
@@ -464,6 +482,8 @@ namespace IO.Swagger.Api
 
             if (username != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "username", username)); // query parameter
             if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
 
 
             // make the HTTP request

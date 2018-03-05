@@ -21,80 +21,80 @@ namespace IO.Swagger.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IPartiesApi : IApiAccessor
+    public interface INamedSpacesApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get parties
+        /// Return allowed Spaces of User
         /// </summary>
         /// <remarks>
-        /// This will search parties on allowed spaces and current user
+        /// [view-users] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>GenericDataRepresentationListPartyData</returns>
-        GenericDataRepresentationListPartyData GetParties (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListSpaceData</returns>
+        GenericDataRepresentationListSpaceData GetUserSpaces (string userId, string role = null, int? offset = null, int? limit = null);
 
         /// <summary>
-        /// Get parties
+        /// Return allowed Spaces of User
         /// </summary>
         /// <remarks>
-        /// This will search parties on allowed spaces and current user
+        /// [view-users] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>ApiResponse of GenericDataRepresentationListPartyData</returns>
-        ApiResponse<GenericDataRepresentationListPartyData> GetPartiesWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListSpaceData</returns>
+        ApiResponse<GenericDataRepresentationListSpaceData> GetUserSpacesWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get parties
+        /// Return allowed Spaces of User
         /// </summary>
         /// <remarks>
-        /// This will search parties on allowed spaces and current user
+        /// [view-users] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>Task of GenericDataRepresentationListPartyData</returns>
-        System.Threading.Tasks.Task<GenericDataRepresentationListPartyData> GetPartiesAsync (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListSpaceData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetUserSpacesAsync (string userId, string role = null, int? offset = null, int? limit = null);
 
         /// <summary>
-        /// Get parties
+        /// Return allowed Spaces of User
         /// </summary>
         /// <remarks>
-        /// This will search parties on allowed spaces and current user
+        /// [view-users] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>Task of ApiResponse (GenericDataRepresentationListPartyData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListPartyData>> GetPartiesAsyncWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListSpaceData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetUserSpacesAsyncWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class PartiesApi : IPartiesApi
+    public partial class NamedSpacesApi : INamedSpacesApi
     {
         private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PartiesApi"/> class.
+        /// Initializes a new instance of the <see cref="NamedSpacesApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public PartiesApi(String basePath)
+        public NamedSpacesApi(String basePath)
         {
             this.Configuration = new Configuration { BasePath = basePath };
 
@@ -102,12 +102,12 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PartiesApi"/> class
+        /// Initializes a new instance of the <see cref="NamedSpacesApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public PartiesApi(Configuration configuration = null)
+        public NamedSpacesApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default;
@@ -181,33 +181,36 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get parties This will search parties on allowed spaces and current user
+        /// Return allowed Spaces of User [view-users] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>GenericDataRepresentationListPartyData</returns>
-        public GenericDataRepresentationListPartyData GetParties (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListSpaceData</returns>
+        public GenericDataRepresentationListSpaceData GetUserSpaces (string userId, string role = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<GenericDataRepresentationListPartyData> localVarResponse = GetPartiesWithHttpInfo(filterText, offset, limit, space);
+             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = GetUserSpacesWithHttpInfo(userId, role, offset, limit);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get parties This will search parties on allowed spaces and current user
+        /// Return allowed Spaces of User [view-users] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>ApiResponse of GenericDataRepresentationListPartyData</returns>
-        public ApiResponse< GenericDataRepresentationListPartyData > GetPartiesWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListSpaceData</returns>
+        public ApiResponse< GenericDataRepresentationListSpaceData > GetUserSpacesWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null)
         {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling NamedSpacesApi->GetUserSpaces");
 
-            var localVarPath = "/api/parties";
+            var localVarPath = "/api/namedspaces/{userId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -229,10 +232,10 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
 
 
             // make the HTTP request
@@ -244,44 +247,47 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetParties", localVarResponse);
+                Exception exception = ExceptionFactory("GetUserSpaces", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GenericDataRepresentationListPartyData>(localVarStatusCode,
+            return new ApiResponse<GenericDataRepresentationListSpaceData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GenericDataRepresentationListPartyData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListPartyData)));
+                (GenericDataRepresentationListSpaceData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListSpaceData)));
         }
 
         /// <summary>
-        /// Get parties This will search parties on allowed spaces and current user
+        /// Return allowed Spaces of User [view-users] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>Task of GenericDataRepresentationListPartyData</returns>
-        public async System.Threading.Tasks.Task<GenericDataRepresentationListPartyData> GetPartiesAsync (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListSpaceData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetUserSpacesAsync (string userId, string role = null, int? offset = null, int? limit = null)
         {
-             ApiResponse<GenericDataRepresentationListPartyData> localVarResponse = await GetPartiesAsyncWithHttpInfo(filterText, offset, limit, space);
+             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = await GetUserSpacesAsyncWithHttpInfo(userId, role, offset, limit);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get parties This will search parties on allowed spaces and current user
+        /// Return allowed Spaces of User [view-users] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
         /// <param name="offset">First result (optional, default to 0)</param>
-        /// <param name="limit">Max result (optional, default to 10)</param>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <returns>Task of ApiResponse (GenericDataRepresentationListPartyData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListPartyData>> GetPartiesAsyncWithHttpInfo (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListSpaceData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetUserSpacesAsyncWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null)
         {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling NamedSpacesApi->GetUserSpaces");
 
-            var localVarPath = "/api/parties";
+            var localVarPath = "/api/namedspaces/{userId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -303,10 +309,10 @@ namespace IO.Swagger.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
-            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
 
 
             // make the HTTP request
@@ -318,13 +324,13 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetParties", localVarResponse);
+                Exception exception = ExceptionFactory("GetUserSpaces", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<GenericDataRepresentationListPartyData>(localVarStatusCode,
+            return new ApiResponse<GenericDataRepresentationListSpaceData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GenericDataRepresentationListPartyData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListPartyData)));
+                (GenericDataRepresentationListSpaceData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListSpaceData)));
         }
 
     }

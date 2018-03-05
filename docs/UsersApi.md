@@ -4,17 +4,15 @@ All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetUser**](UsersApi.md#getuser) | **GET** /api/users/{userId} | Get User
-[**GetUsers**](UsersApi.md#getusers) | **GET** /api/users | Get Users
+[**GetUser**](UsersApi.md#getuser) | **GET** /api/users/{userId} | Return One User
+[**GetUsers**](UsersApi.md#getusers) | **GET** /api/users | Return List of Users
 
 
 <a name="getuser"></a>
 # **GetUser**
 > UserRepresentation GetUser (string userId)
 
-Get User
-
-This will return the requested user. [view-users] role required
+Return One User
 
 ### Example
 ```csharp
@@ -35,7 +33,7 @@ namespace Example
 
             try
             {
-                // Get User
+                // Return One User
                 UserRepresentation result = apiInstance.GetUser(userId);
                 Debug.WriteLine(result);
             }
@@ -71,11 +69,9 @@ No authorization required
 
 <a name="getusers"></a>
 # **GetUsers**
-> GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null)
+> GenericDataRepresentationListUserData GetUsers (string username = null, string filterText = null, int? offset = null, int? limit = null)
 
-Get Users
-
-This will search users. [view-users] role required
+Return List of Users
 
 ### Example
 ```csharp
@@ -94,11 +90,13 @@ namespace Example
             var apiInstance = new UsersApi();
             var username = username_example;  // string | Username (optional) 
             var filterText = filterText_example;  // string | Filter Text (optional) 
+            var offset = 56;  // int? | First result (optional)  (default to 0)
+            var limit = 56;  // int? | Max results (optional)  (default to 10)
 
             try
             {
-                // Get Users
-                GenericDataRepresentationListUserData result = apiInstance.GetUsers(username, filterText);
+                // Return List of Users
+                GenericDataRepresentationListUserData result = apiInstance.GetUsers(username, filterText, offset, limit);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -116,6 +114,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **string**| Username | [optional] 
  **filterText** | **string**| Filter Text | [optional] 
+ **offset** | **int?**| First result | [optional] [default to 0]
+ **limit** | **int?**| Max results | [optional] [default to 10]
 
 ### Return type
 

@@ -28,7 +28,7 @@ namespace IO.Swagger.Api
         /// Update User Profile
         /// </summary>
         /// <remarks>
-        /// This will update the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Api
         /// Update User Profile
         /// </summary>
         /// <remarks>
-        /// This will update the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -49,7 +49,7 @@ namespace IO.Swagger.Api
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// This will return the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>UserRepresentation</returns>
@@ -59,7 +59,7 @@ namespace IO.Swagger.Api
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// This will return the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of UserRepresentation</returns>
@@ -70,7 +70,7 @@ namespace IO.Swagger.Api
         /// Update User Profile
         /// </summary>
         /// <remarks>
-        /// This will update the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -81,7 +81,7 @@ namespace IO.Swagger.Api
         /// Update User Profile
         /// </summary>
         /// <remarks>
-        /// This will update the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -91,7 +91,7 @@ namespace IO.Swagger.Api
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// This will return the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of UserRepresentation</returns>
@@ -101,7 +101,7 @@ namespace IO.Swagger.Api
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// This will return the profile associated to the current token. [user] role required
+        /// [user] role required
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (UserRepresentation)</returns>
@@ -207,7 +207,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update User Profile This will update the profile associated to the current token. [user] role required
+        /// Update User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -219,7 +219,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update User Profile This will update the profile associated to the current token. [user] role required
+        /// Update User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -278,7 +278,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update User Profile This will update the profile associated to the current token. [user] role required
+        /// Update User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -291,7 +291,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update User Profile This will update the profile associated to the current token. [user] role required
+        /// Update User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -350,7 +350,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Return User Profile This will return the profile associated to the current token. [user] role required
+        /// Return User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>UserRepresentation</returns>
@@ -361,7 +361,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Return User Profile This will return the profile associated to the current token. [user] role required
+        /// Return User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of UserRepresentation</returns>
@@ -411,7 +411,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Return User Profile This will return the profile associated to the current token. [user] role required
+        /// Return User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of UserRepresentation</returns>
@@ -423,7 +423,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Return User Profile This will return the profile associated to the current token. [user] role required
+        /// Return User Profile [user] role required
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (UserRepresentation)</returns>

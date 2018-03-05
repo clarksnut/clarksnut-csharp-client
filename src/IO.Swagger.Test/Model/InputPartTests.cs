@@ -67,14 +67,6 @@ namespace IO.Swagger.Test
 
 
         /// <summary>
-        /// Test the property 'ContentTypeFromMessage'
-        /// </summary>
-        [Test]
-        public void ContentTypeFromMessageTest()
-        {
-            // TODO unit test for the property 'ContentTypeFromMessage'
-        }
-        /// <summary>
         /// Test the property 'BodyAsString'
         /// </summary>
         [Test]
@@ -83,12 +75,12 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'BodyAsString'
         }
         /// <summary>
-        /// Test the property 'MediaType'
+        /// Test the property 'ContentTypeFromMessage'
         /// </summary>
         [Test]
-        public void MediaTypeTest()
+        public void ContentTypeFromMessageTest()
         {
-            // TODO unit test for the property 'MediaType'
+            // TODO unit test for the property 'ContentTypeFromMessage'
         }
         /// <summary>
         /// Test the property 'Headers'
@@ -97,6 +89,14 @@ namespace IO.Swagger.Test
         public void HeadersTest()
         {
             // TODO unit test for the property 'Headers'
+        }
+        /// <summary>
+        /// Test the property 'MediaType'
+        /// </summary>
+        [Test]
+        public void MediaTypeTest()
+        {
+            // TODO unit test for the property 'MediaType'
         }
 
     }

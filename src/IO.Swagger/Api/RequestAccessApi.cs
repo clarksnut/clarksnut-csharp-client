@@ -28,7 +28,7 @@ namespace IO.Swagger.Api
         /// Get Request accesses
         /// </summary>
         /// <remarks>
-        /// This will return all requests on current user. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -40,7 +40,7 @@ namespace IO.Swagger.Api
         /// Get Request accesses
         /// </summary>
         /// <remarks>
-        /// This will return all requests on current user. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -51,7 +51,7 @@ namespace IO.Swagger.Api
         /// Request access
         /// </summary>
         /// <remarks>
-        /// This will request access to space. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -62,7 +62,7 @@ namespace IO.Swagger.Api
         /// Request access
         /// </summary>
         /// <remarks>
-        /// This will request access to space. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -72,7 +72,7 @@ namespace IO.Swagger.Api
         /// Update request
         /// </summary>
         /// <remarks>
-        /// This will accept or reject requests. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>
@@ -84,7 +84,7 @@ namespace IO.Swagger.Api
         /// Update request
         /// </summary>
         /// <remarks>
-        /// This will accept or reject requests. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>
@@ -97,7 +97,7 @@ namespace IO.Swagger.Api
         /// Get Request accesses
         /// </summary>
         /// <remarks>
-        /// This will return all requests on current user. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -109,7 +109,7 @@ namespace IO.Swagger.Api
         /// Get Request accesses
         /// </summary>
         /// <remarks>
-        /// This will return all requests on current user. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -120,7 +120,7 @@ namespace IO.Swagger.Api
         /// Request access
         /// </summary>
         /// <remarks>
-        /// This will request access to space. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -131,7 +131,7 @@ namespace IO.Swagger.Api
         /// Request access
         /// </summary>
         /// <remarks>
-        /// This will request access to space. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -141,7 +141,7 @@ namespace IO.Swagger.Api
         /// Update request
         /// </summary>
         /// <remarks>
-        /// This will accept or reject requests. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>
@@ -153,7 +153,7 @@ namespace IO.Swagger.Api
         /// Update request
         /// </summary>
         /// <remarks>
-        /// This will accept or reject requests. [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>
@@ -261,7 +261,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Request accesses This will return all requests on current user. [user] role required
+        /// Get Request accesses 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -274,7 +274,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Request accesses This will return all requests on current user. [user] role required
+        /// Get Request accesses 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -328,7 +328,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Request accesses This will return all requests on current user. [user] role required
+        /// Get Request accesses 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -342,7 +342,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get Request accesses This will return all requests on current user. [user] role required
+        /// Get Request accesses 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="space">Space Ids (optional)</param>
@@ -396,7 +396,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Request access This will request access to space. [user] role required
+        /// Request access 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -407,7 +407,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Request access This will request access to space. [user] role required
+        /// Request access 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -466,7 +466,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Request access This will request access to space. [user] role required
+        /// Request access 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -478,7 +478,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Request access This will request access to space. [user] role required
+        /// Request access 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"> (optional)</param>
@@ -537,7 +537,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update request This will accept or reject requests. [user] role required
+        /// Update request 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>
@@ -549,7 +549,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update request This will accept or reject requests. [user] role required
+        /// Update request 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>
@@ -613,7 +613,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update request This will accept or reject requests. [user] role required
+        /// Update request 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>
@@ -626,7 +626,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update request This will accept or reject requests. [user] role required
+        /// Update request 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="requestId">Request Id</param>

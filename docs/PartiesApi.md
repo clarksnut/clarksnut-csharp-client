@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getparties"></a>
 # **GetParties**
-> GenericDataRepresentationListPartyData GetParties (string q = null, int? offset = null, int? limit = null, List<string> space = null)
+> GenericDataRepresentationListPartyData GetParties (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
 
 Get parties
 
@@ -30,15 +30,15 @@ namespace Example
         public void main()
         {
             var apiInstance = new PartiesApi();
-            var q = q_example;  // string | Search text (optional) 
+            var filterText = filterText_example;  // string | Filter Text (optional) 
             var offset = 56;  // int? | First result (optional)  (default to 0)
             var limit = 56;  // int? | Max result (optional)  (default to 10)
-            var space = new List<string>(); // List<string> | Spaces Id where to search parties (optional) 
+            var space = new List<string>(); // List<string> | Space Ids (optional) 
 
             try
             {
                 // Get parties
-                GenericDataRepresentationListPartyData result = apiInstance.GetParties(q, offset, limit, space);
+                GenericDataRepresentationListPartyData result = apiInstance.GetParties(filterText, offset, limit, space);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -54,10 +54,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **q** | **string**| Search text | [optional] 
+ **filterText** | **string**| Filter Text | [optional] 
  **offset** | **int?**| First result | [optional] [default to 0]
  **limit** | **int?**| Max result | [optional] [default to 10]
- **space** | [**List&lt;string&gt;**](string.md)| Spaces Id where to search parties | [optional] 
+ **space** | [**List&lt;string&gt;**](string.md)| Space Ids | [optional] 
 
 ### Return type
 

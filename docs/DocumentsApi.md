@@ -4,22 +4,146 @@ All URIs are relative to *https://localhost:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDocument**](DocumentsApi.md#getdocument) | **GET** /api/documents/{documentId} | Get Document
-[**GetDocuments**](DocumentsApi.md#getdocuments) | **GET** /api/documents | Get Documents
-[**GetXml**](DocumentsApi.md#getxml) | **GET** /api/documents/{documentId}/download | Download Document
+[**DownloadPdf**](DocumentsApi.md#downloadpdf) | **GET** /api/documents/{documentId}/print | Print Document
+[**DownloadXml**](DocumentsApi.md#downloadxml) | **GET** /api/documents/{documentId}/download | Download Document
+[**GetDocument**](DocumentsApi.md#getdocument) | **GET** /api/documents/{documentId} | Return one Document
+[**GetDocuments**](DocumentsApi.md#getdocuments) | **GET** /api/documents | Return List of Documents
 [**ImportDocument**](DocumentsApi.md#importdocument) | **POST** /api/documents | Import Document
-[**PrintDocument**](DocumentsApi.md#printdocument) | **GET** /api/documents/{documentId}/print | Print Document
 [**SearchDocuments**](DocumentsApi.md#searchdocuments) | **POST** /api/documents/search | Search Document
-[**UpdateDocument**](DocumentsApi.md#updatedocument) | **PUT** /api/documents/{documentId} | Update Document
+[**UpdateDocument**](DocumentsApi.md#updatedocument) | **PUT** /api/documents/{documentId} | Update a Document
 
+
+<a name="downloadpdf"></a>
+# **DownloadPdf**
+> void DownloadPdf (string documentId, string theme = null, string format = null)
+
+Print Document
+
+User need to have access to the Space owner of the document
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DownloadPdfExample
+    {
+        public void main()
+        {
+            var apiInstance = new DocumentsApi();
+            var documentId = documentId_example;  // string | Document Id
+            var theme = theme_example;  // string | Theme (optional) 
+            var format = format_example;  // string | format (optional)  (default to pdf)
+
+            try
+            {
+                // Print Document
+                apiInstance.DownloadPdf(documentId, theme, format);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DocumentsApi.DownloadPdf: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **documentId** | **string**| Document Id | 
+ **theme** | **string**| Theme | [optional] 
+ **format** | **string**| format | [optional] [default to pdf]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="downloadxml"></a>
+# **DownloadXml**
+> void DownloadXml (string documentId)
+
+Download Document
+
+User need to have access to the Space owner of the document
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DownloadXmlExample
+    {
+        public void main()
+        {
+            var apiInstance = new DocumentsApi();
+            var documentId = documentId_example;  // string | Document Id
+
+            try
+            {
+                // Download Document
+                apiInstance.DownloadXml(documentId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DocumentsApi.DownloadXml: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **documentId** | **string**| Document Id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getdocument"></a>
 # **GetDocument**
 > DocumentRepresentation GetDocument (string documentId)
 
-Get Document
+Return one Document
 
-This will return a document
+User need to have access to the Space owner of the document
 
 ### Example
 ```csharp
@@ -40,7 +164,7 @@ namespace Example
 
             try
             {
-                // Get Document
+                // Return one Document
                 DocumentRepresentation result = apiInstance.GetDocument(documentId);
                 Debug.WriteLine(result);
             }
@@ -76,11 +200,11 @@ No authorization required
 
 <a name="getdocuments"></a>
 # **GetDocuments**
-> GenericDataRepresentationListDocumentData GetDocuments (string q = null, int? offset = null, int? limit = null, List<string> space = null)
+> GenericDataRepresentationListDocumentData GetDocuments (string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
 
-Get Documents
+Return List of Documents
 
-This will search just on Owned and Collaborated Spaces
+Search on allowed user (session) spaces
 
 ### Example
 ```csharp
@@ -97,15 +221,15 @@ namespace Example
         public void main()
         {
             var apiInstance = new DocumentsApi();
-            var q = q_example;  // string | A text for filter results (optional) 
-            var offset = 56;  // int? | The first position of array results (optional)  (default to 0)
-            var limit = 56;  // int? | The max number of results (optional)  (default to 10)
-            var space = new List<string>(); // List<string> | List of space ids to search in. If null or empty all allowed spaces of user will be used (optional) 
+            var filterText = filterText_example;  // string | Filter text (optional) 
+            var offset = 56;  // int? | First result (optional)  (default to 0)
+            var limit = 56;  // int? | Maz results (optional)  (default to 10)
+            var space = new List<string>(); // List<string> | Space Ids (optional) 
 
             try
             {
-                // Get Documents
-                GenericDataRepresentationListDocumentData result = apiInstance.GetDocuments(q, offset, limit, space);
+                // Return List of Documents
+                GenericDataRepresentationListDocumentData result = apiInstance.GetDocuments(filterText, offset, limit, space);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -121,10 +245,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **q** | **string**| A text for filter results | [optional] 
- **offset** | **int?**| The first position of array results | [optional] [default to 0]
- **limit** | **int?**| The max number of results | [optional] [default to 10]
- **space** | [**List&lt;string&gt;**](string.md)| List of space ids to search in. If null or empty all allowed spaces of user will be used | [optional] 
+ **filterText** | **string**| Filter text | [optional] 
+ **offset** | **int?**| First result | [optional] [default to 0]
+ **limit** | **int?**| Maz results | [optional] [default to 10]
+ **space** | [**List&lt;string&gt;**](string.md)| Space Ids | [optional] 
 
 ### Return type
 
@@ -138,66 +262,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getxml"></a>
-# **GetXml**
-> void GetXml (string documentId)
-
-Download Document
-
-This will download the document
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class GetXmlExample
-    {
-        public void main()
-        {
-            var apiInstance = new DocumentsApi();
-            var documentId = documentId_example;  // string | Document Id
-
-            try
-            {
-                // Download Document
-                apiInstance.GetXml(documentId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling DocumentsApi.GetXml: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **documentId** | **string**| Document Id | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -261,77 +325,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="printdocument"></a>
-# **PrintDocument**
-> void PrintDocument (string documentId, string theme = null, string format = null)
-
-Print Document
-
-This will print the document
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class PrintDocumentExample
-    {
-        public void main()
-        {
-            var apiInstance = new DocumentsApi();
-            var documentId = documentId_example;  // string | Document Id
-            var theme = theme_example;  // string | Theme (optional) 
-            var format = format_example;  // string | format (optional)  (default to pdf)
-
-            try
-            {
-                // Print Document
-                apiInstance.PrintDocument(documentId, theme, format);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling DocumentsApi.PrintDocument: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **documentId** | **string**| Document Id | 
- **theme** | **string**| Theme | [optional] 
- **format** | **string**| format | [optional] [default to pdf]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 <a name="searchdocuments"></a>
 # **SearchDocuments**
 > GenericDataRepresentationListDocumentData SearchDocuments (DocumentQueryRepresentation body = null)
 
 Search Document
 
-This will search document in advanced mode
+Search on allowed user (session) spaces
 
 ### Example
 ```csharp
@@ -390,9 +390,9 @@ No authorization required
 # **UpdateDocument**
 > DocumentRepresentation UpdateDocument (string documentId, DocumentRepresentation body = null)
 
-Update Document
+Update a Document
 
-This will update the document just for current user
+User need to have access to the Space owner of the document
 
 ### Example
 ```csharp
@@ -414,7 +414,7 @@ namespace Example
 
             try
             {
-                // Update Document
+                // Update a Document
                 DocumentRepresentation result = apiInstance.UpdateDocument(documentId, body);
                 Debug.WriteLine(result);
             }
