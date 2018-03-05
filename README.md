@@ -71,16 +71,17 @@ namespace Example
             var apiInstance = new DocumentsApi();
             var documentId = documentId_example;  // string | Document Id
             var theme = theme_example;  // string | Theme (optional) 
+            var locale = locale_example;  // string | Locale (optional) 
             var format = format_example;  // string | format (optional)  (default to pdf)
 
             try
             {
                 // Print Document
-                apiInstance.DownloadPdf(documentId, theme, format);
+                apiInstance.DownloadDocumentPdf(documentId, theme, locale, format);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DocumentsApi.DownloadPdf: " + e.Message );
+                Debug.Print("Exception when calling DocumentsApi.DownloadDocumentPdf: " + e.Message );
             }
 
         }
@@ -95,30 +96,35 @@ All URIs are relative to *https://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DocumentsApi* | [**DownloadPdf**](docs/DocumentsApi.md#downloadpdf) | **GET** /api/documents/{documentId}/print | Print Document
-*DocumentsApi* | [**DownloadXml**](docs/DocumentsApi.md#downloadxml) | **GET** /api/documents/{documentId}/download | Download Document
+*DocumentsApi* | [**DownloadDocumentPdf**](docs/DocumentsApi.md#downloaddocumentpdf) | **GET** /api/documents/{documentId}/print | Print Document
+*DocumentsApi* | [**DownloadDocumentXml**](docs/DocumentsApi.md#downloaddocumentxml) | **GET** /api/documents/{documentId}/download | Download Document
 *DocumentsApi* | [**GetDocument**](docs/DocumentsApi.md#getdocument) | **GET** /api/documents/{documentId} | Return one Document
-*DocumentsApi* | [**GetDocuments**](docs/DocumentsApi.md#getdocuments) | **GET** /api/documents | Return List of Documents
 *DocumentsApi* | [**ImportDocument**](docs/DocumentsApi.md#importdocument) | **POST** /api/documents | Import Document
-*DocumentsApi* | [**SearchDocuments**](docs/DocumentsApi.md#searchdocuments) | **POST** /api/documents/search | Search Document
-*DocumentsApi* | [**UpdateDocument**](docs/DocumentsApi.md#updatedocument) | **PUT** /api/documents/{documentId} | Update a Document
-*NamedSpacesApi* | [**GetUserSpaces**](docs/NamedSpacesApi.md#getuserspaces) | **GET** /api/namedspaces/{userId} | Return allowed Spaces of User
-*PartiesApi* | [**GetParties**](docs/PartiesApi.md#getparties) | **GET** /api/parties | Get parties
-*ProfileApi* | [**CurrentUser**](docs/ProfileApi.md#currentuser) | **PUT** /api/profile | Update User Profile
 *ProfileApi* | [**GetCurrentUser**](docs/ProfileApi.md#getcurrentuser) | **GET** /api/profile | Return User Profile
-*RequestAccessApi* | [**GetRequestAccess**](docs/RequestAccessApi.md#getrequestaccess) | **GET** /api/request-access | Get Request accesses
 *RequestAccessApi* | [**RequestAccessToSpace**](docs/RequestAccessApi.md#requestaccesstospace) | **POST** /api/request-access | Request access
 *RequestAccessApi* | [**UpdateAccessSpace**](docs/RequestAccessApi.md#updateaccessspace) | **PUT** /api/request-access/{requestId} | Update request
-*SpacesApi* | [**AddSpaceCollaborators**](docs/SpacesApi.md#addspacecollaborators) | **POST** /api/spaces/{spaceId}/collaborators | Add new Collaborator
 *SpacesApi* | [**CreateSpace**](docs/SpacesApi.md#createspace) | **POST** /api/spaces | Create new Space
-*SpacesApi* | [**DeleteUserSpace**](docs/SpacesApi.md#deleteuserspace) | **DELETE** /api/spaces/{spaceId} | Delete space
 *SpacesApi* | [**GetSpace**](docs/SpacesApi.md#getspace) | **GET** /api/spaces/{spaceId} | Return one Space
-*SpacesApi* | [**GetSpaceCollaborators**](docs/SpacesApi.md#getspacecollaborators) | **GET** /api/spaces/{spaceId}/collaborators | Return list of Collaborators
 *SpacesApi* | [**GetSpaces**](docs/SpacesApi.md#getspaces) | **GET** /api/spaces | Return list of Spaces
-*SpacesApi* | [**RemoveSpaceCollaborators**](docs/SpacesApi.md#removespacecollaborators) | **DELETE** /api/spaces/{spaceId}/collaborators/{userId} | Remove Collaborator
-*SpacesApi* | [**UpdateUserSpace**](docs/SpacesApi.md#updateuserspace) | **PUT** /api/spaces/{spaceId} | Update space
+*UsersApi* | [**AddSpaceCollaborators**](docs/UsersApi.md#addspacecollaborators) | **POST** /api/users/{userId}/spaces/{spaceId}/collaborators | Add new Collaborator
+*UsersApi* | [**DeleteUserSpace**](docs/UsersApi.md#deleteuserspace) | **DELETE** /api/users/{userId}/spaces/{spaceId} | Delete space
+*UsersApi* | [**DownloadPdf**](docs/UsersApi.md#downloadpdf) | **GET** /api/users/{userId}/documents/{documentId}/print | Print Document
+*UsersApi* | [**DownloadUserDocumentXml**](docs/UsersApi.md#downloaduserdocumentxml) | **GET** /api/users/{userId}/documents/{documentId}/download | Download Document
+*UsersApi* | [**GetNotifications**](docs/UsersApi.md#getnotifications) | **GET** /api/users/{userId}/notifications | Get Notifications
+*UsersApi* | [**GetParties**](docs/UsersApi.md#getparties) | **GET** /api/users/{userId}/parties | Get parties
 *UsersApi* | [**GetUser**](docs/UsersApi.md#getuser) | **GET** /api/users/{userId} | Return One User
+*UsersApi* | [**GetUserDocument**](docs/UsersApi.md#getuserdocument) | **GET** /api/users/{userId}/documents/{documentId} | Return one Document
+*UsersApi* | [**GetUserDocuments**](docs/UsersApi.md#getuserdocuments) | **GET** /api/users/{userId}/documents | Return List of Documents
+*UsersApi* | [**GetUserSpace**](docs/UsersApi.md#getuserspace) | **GET** /api/users/{userId}/spaces/{spaceId} | Return one Space
+*UsersApi* | [**GetUserSpaceCollaborators**](docs/UsersApi.md#getuserspacecollaborators) | **GET** /api/users/{userId}/spaces/{spaceId}/collaborators | Return list of Collaborators
+*UsersApi* | [**GetUserSpaceRequestAccess**](docs/UsersApi.md#getuserspacerequestaccess) | **GET** /api/users/{userId}/spaces/{spaceId}/request-access | Get Notifications
+*UsersApi* | [**GetUserSpaces**](docs/UsersApi.md#getuserspaces) | **GET** /api/users/{userId}/spaces | Return allowed Spaces of User
 *UsersApi* | [**GetUsers**](docs/UsersApi.md#getusers) | **GET** /api/users | Return List of Users
+*UsersApi* | [**RemoveSpaceCollaborators**](docs/UsersApi.md#removespacecollaborators) | **DELETE** /api/users/{userId}/spaces/{spaceId}/collaborators/{collaboratorId} | Remove Collaborator
+*UsersApi* | [**SearchUserDocuments**](docs/UsersApi.md#searchuserdocuments) | **POST** /api/users/{userId}/documents/search | Search Document
+*UsersApi* | [**UpdateUser**](docs/UsersApi.md#updateuser) | **PUT** /api/users/{userId} | Update User
+*UsersApi* | [**UpdateUserDocument**](docs/UsersApi.md#updateuserdocument) | **PUT** /api/users/{userId}/documents/{documentId} | Update a Document
+*UsersApi* | [**UpdateUserSpace**](docs/UsersApi.md#updateuserspace) | **PUT** /api/users/{userId}/spaces/{spaceId} | Update space
 
 
 <a name="documentation-for-models"></a>
@@ -143,6 +149,9 @@ Class | Method | HTTP request | Description
  - [Model.InputPart](docs/InputPart.md)
  - [Model.MediaType](docs/MediaType.md)
  - [Model.MultipartFormDataInput](docs/MultipartFormDataInput.md)
+ - [Model.NotificationsAttributes](docs/NotificationsAttributes.md)
+ - [Model.NotificationsData](docs/NotificationsData.md)
+ - [Model.NotificationsRepresentation](docs/NotificationsRepresentation.md)
  - [Model.PartyAttributes](docs/PartyAttributes.md)
  - [Model.PartyData](docs/PartyData.md)
  - [Model.RequestAttributes](docs/RequestAttributes.md)

@@ -25,6 +25,158 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Add new Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        void AddSpaceCollaborators (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null);
+
+        /// <summary>
+        /// Add new Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AddSpaceCollaboratorsWithHttpInfo (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null);
+        /// <summary>
+        /// Delete space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns></returns>
+        void DeleteUserSpace (string userId, string spaceId);
+
+        /// <summary>
+        /// Delete space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DeleteUserSpaceWithHttpInfo (string userId, string spaceId);
+        /// <summary>
+        /// Print Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns></returns>
+        void DownloadPdf (string userId, string documentId, string theme = null, string format = null);
+
+        /// <summary>
+        /// Print Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DownloadPdfWithHttpInfo (string userId, string documentId, string theme = null, string format = null);
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns></returns>
+        void DownloadUserDocumentXml (string userId, string documentId);
+
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DownloadUserDocumentXmlWithHttpInfo (string userId, string documentId);
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>NotificationsRepresentation</returns>
+        NotificationsRepresentation GetNotifications (string userId, List<string> space = null, string status = null);
+
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>ApiResponse of NotificationsRepresentation</returns>
+        ApiResponse<NotificationsRepresentation> GetNotificationsWithHttpInfo (string userId, List<string> space = null, string status = null);
+        /// <summary>
+        /// Get parties
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>GenericDataRepresentationListPartyData</returns>
+        GenericDataRepresentationListPartyData GetParties (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+
+        /// <summary>
+        /// Get parties
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListPartyData</returns>
+        ApiResponse<GenericDataRepresentationListPartyData> GetPartiesWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+        /// <summary>
         /// Return One User
         /// </summary>
         /// <remarks>
@@ -45,6 +197,160 @@ namespace IO.Swagger.Api
         /// <param name="userId">User Id</param>
         /// <returns>ApiResponse of UserRepresentation</returns>
         ApiResponse<UserRepresentation> GetUserWithHttpInfo (string userId);
+        /// <summary>
+        /// Return one Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>DocumentRepresentation</returns>
+        DocumentRepresentation GetUserDocument (string userId, string documentId);
+
+        /// <summary>
+        /// Return one Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>ApiResponse of DocumentRepresentation</returns>
+        ApiResponse<DocumentRepresentation> GetUserDocumentWithHttpInfo (string userId, string documentId);
+        /// <summary>
+        /// Return List of Documents
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>GenericDataRepresentationListDocumentData</returns>
+        GenericDataRepresentationListDocumentData GetUserDocuments (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+
+        /// <summary>
+        /// Return List of Documents
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListDocumentData</returns>
+        ApiResponse<GenericDataRepresentationListDocumentData> GetUserDocumentsWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+        /// <summary>
+        /// Return one Space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>SpaceRepresentation</returns>
+        SpaceRepresentation GetUserSpace (string userId, string spaceId);
+
+        /// <summary>
+        /// Return one Space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>ApiResponse of SpaceRepresentation</returns>
+        ApiResponse<SpaceRepresentation> GetUserSpaceWithHttpInfo (string userId, string spaceId);
+        /// <summary>
+        /// Return list of Collaborators
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListUserData</returns>
+        GenericDataRepresentationListUserData GetUserSpaceCollaborators (string userId, string spaceId, int? offset = null, int? limit = null);
+
+        /// <summary>
+        /// Return list of Collaborators
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
+        ApiResponse<GenericDataRepresentationListUserData> GetUserSpaceCollaboratorsWithHttpInfo (string userId, string spaceId, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>GenericDataRepresentationListRequestData</returns>
+        GenericDataRepresentationListRequestData GetUserSpaceRequestAccess (string userId, string spaceId, string status = null);
+
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListRequestData</returns>
+        ApiResponse<GenericDataRepresentationListRequestData> GetUserSpaceRequestAccessWithHttpInfo (string userId, string spaceId, string status = null);
+        /// <summary>
+        /// Return allowed Spaces of User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListSpaceData</returns>
+        GenericDataRepresentationListSpaceData GetUserSpaces (string userId, string role = null, int? offset = null, int? limit = null);
+
+        /// <summary>
+        /// Return allowed Spaces of User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListSpaceData</returns>
+        ApiResponse<GenericDataRepresentationListSpaceData> GetUserSpacesWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null);
         /// <summary>
         /// Return List of Users
         /// </summary>
@@ -72,8 +378,281 @@ namespace IO.Swagger.Api
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
         ApiResponse<GenericDataRepresentationListUserData> GetUsersWithHttpInfo (string username = null, string filterText = null, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns></returns>
+        void RemoveSpaceCollaborators (string userId, string spaceId, string collaboratorId);
+
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> RemoveSpaceCollaboratorsWithHttpInfo (string userId, string spaceId, string collaboratorId);
+        /// <summary>
+        /// Search Document
+        /// </summary>
+        /// <remarks>
+        /// Search on allowed user (session) spaces
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>GenericDataRepresentationListDocumentData</returns>
+        GenericDataRepresentationListDocumentData SearchUserDocuments (string userId, DocumentQueryRepresentation body = null);
+
+        /// <summary>
+        /// Search Document
+        /// </summary>
+        /// <remarks>
+        /// Search on allowed user (session) spaces
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListDocumentData</returns>
+        ApiResponse<GenericDataRepresentationListDocumentData> SearchUserDocumentsWithHttpInfo (string userId, DocumentQueryRepresentation body = null);
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>UserRepresentation</returns>
+        UserRepresentation UpdateUser (string userId, UserRepresentation body = null);
+
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of UserRepresentation</returns>
+        ApiResponse<UserRepresentation> UpdateUserWithHttpInfo (string userId, UserRepresentation body = null);
+        /// <summary>
+        /// Update a Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>DocumentRepresentation</returns>
+        DocumentRepresentation UpdateUserDocument (string userId, string documentId, DocumentRepresentation body = null);
+
+        /// <summary>
+        /// Update a Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of DocumentRepresentation</returns>
+        ApiResponse<DocumentRepresentation> UpdateUserDocumentWithHttpInfo (string userId, string documentId, DocumentRepresentation body = null);
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>SpaceRepresentation</returns>
+        SpaceRepresentation UpdateUserSpace (string userId, string spaceId, SpaceRepresentation body = null);
+
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of SpaceRepresentation</returns>
+        ApiResponse<SpaceRepresentation> UpdateUserSpaceWithHttpInfo (string userId, string spaceId, SpaceRepresentation body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// Add new Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task AddSpaceCollaboratorsAsync (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null);
+
+        /// <summary>
+        /// Add new Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> AddSpaceCollaboratorsAsyncWithHttpInfo (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null);
+        /// <summary>
+        /// Delete space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DeleteUserSpaceAsync (string userId, string spaceId);
+
+        /// <summary>
+        /// Delete space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserSpaceAsyncWithHttpInfo (string userId, string spaceId);
+        /// <summary>
+        /// Print Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadPdfAsync (string userId, string documentId, string theme = null, string format = null);
+
+        /// <summary>
+        /// Print Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DownloadPdfAsyncWithHttpInfo (string userId, string documentId, string theme = null, string format = null);
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DownloadUserDocumentXmlAsync (string userId, string documentId);
+
+        /// <summary>
+        /// Download Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DownloadUserDocumentXmlAsyncWithHttpInfo (string userId, string documentId);
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of NotificationsRepresentation</returns>
+        System.Threading.Tasks.Task<NotificationsRepresentation> GetNotificationsAsync (string userId, List<string> space = null, string status = null);
+
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of ApiResponse (NotificationsRepresentation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<NotificationsRepresentation>> GetNotificationsAsyncWithHttpInfo (string userId, List<string> space = null, string status = null);
+        /// <summary>
+        /// Get parties
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of GenericDataRepresentationListPartyData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListPartyData> GetPartiesAsync (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+
+        /// <summary>
+        /// Get parties
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListPartyData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListPartyData>> GetPartiesAsyncWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
         /// <summary>
         /// Return One User
         /// </summary>
@@ -95,6 +674,160 @@ namespace IO.Swagger.Api
         /// <param name="userId">User Id</param>
         /// <returns>Task of ApiResponse (UserRepresentation)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserRepresentation>> GetUserAsyncWithHttpInfo (string userId);
+        /// <summary>
+        /// Return one Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of DocumentRepresentation</returns>
+        System.Threading.Tasks.Task<DocumentRepresentation> GetUserDocumentAsync (string userId, string documentId);
+
+        /// <summary>
+        /// Return one Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of ApiResponse (DocumentRepresentation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentRepresentation>> GetUserDocumentAsyncWithHttpInfo (string userId, string documentId);
+        /// <summary>
+        /// Return List of Documents
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of GenericDataRepresentationListDocumentData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> GetUserDocumentsAsync (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+
+        /// <summary>
+        /// Return List of Documents
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListDocumentData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> GetUserDocumentsAsyncWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null);
+        /// <summary>
+        /// Return one Space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of SpaceRepresentation</returns>
+        System.Threading.Tasks.Task<SpaceRepresentation> GetUserSpaceAsync (string userId, string spaceId);
+
+        /// <summary>
+        /// Return one Space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of ApiResponse (SpaceRepresentation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SpaceRepresentation>> GetUserSpaceAsyncWithHttpInfo (string userId, string spaceId);
+        /// <summary>
+        /// Return list of Collaborators
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListUserData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUserSpaceCollaboratorsAsync (string userId, string spaceId, int? offset = null, int? limit = null);
+
+        /// <summary>
+        /// Return list of Collaborators
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUserSpaceCollaboratorsAsyncWithHttpInfo (string userId, string spaceId, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of GenericDataRepresentationListRequestData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListRequestData> GetUserSpaceRequestAccessAsync (string userId, string spaceId, string status = null);
+
+        /// <summary>
+        /// Get Notifications
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListRequestData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListRequestData>> GetUserSpaceRequestAccessAsyncWithHttpInfo (string userId, string spaceId, string status = null);
+        /// <summary>
+        /// Return allowed Spaces of User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListSpaceData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetUserSpacesAsync (string userId, string role = null, int? offset = null, int? limit = null);
+
+        /// <summary>
+        /// Return allowed Spaces of User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListSpaceData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetUserSpacesAsyncWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null);
         /// <summary>
         /// Return List of Users
         /// </summary>
@@ -122,6 +855,127 @@ namespace IO.Swagger.Api
         /// <param name="limit">Max results (optional, default to 10)</param>
         /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
         System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUsersAsyncWithHttpInfo (string username = null, string filterText = null, int? offset = null, int? limit = null);
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task RemoveSpaceCollaboratorsAsync (string userId, string spaceId, string collaboratorId);
+
+        /// <summary>
+        /// Remove Collaborator
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> RemoveSpaceCollaboratorsAsyncWithHttpInfo (string userId, string spaceId, string collaboratorId);
+        /// <summary>
+        /// Search Document
+        /// </summary>
+        /// <remarks>
+        /// Search on allowed user (session) spaces
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of GenericDataRepresentationListDocumentData</returns>
+        System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> SearchUserDocumentsAsync (string userId, DocumentQueryRepresentation body = null);
+
+        /// <summary>
+        /// Search Document
+        /// </summary>
+        /// <remarks>
+        /// Search on allowed user (session) spaces
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListDocumentData)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> SearchUserDocumentsAsyncWithHttpInfo (string userId, DocumentQueryRepresentation body = null);
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of UserRepresentation</returns>
+        System.Threading.Tasks.Task<UserRepresentation> UpdateUserAsync (string userId, UserRepresentation body = null);
+
+        /// <summary>
+        /// Update User
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserRepresentation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserRepresentation>> UpdateUserAsyncWithHttpInfo (string userId, UserRepresentation body = null);
+        /// <summary>
+        /// Update a Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of DocumentRepresentation</returns>
+        System.Threading.Tasks.Task<DocumentRepresentation> UpdateUserDocumentAsync (string userId, string documentId, DocumentRepresentation body = null);
+
+        /// <summary>
+        /// Update a Document
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (DocumentRepresentation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DocumentRepresentation>> UpdateUserDocumentAsyncWithHttpInfo (string userId, string documentId, DocumentRepresentation body = null);
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of SpaceRepresentation</returns>
+        System.Threading.Tasks.Task<SpaceRepresentation> UpdateUserSpaceAsync (string userId, string spaceId, SpaceRepresentation body = null);
+
+        /// <summary>
+        /// Update space
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (SpaceRepresentation)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SpaceRepresentation>> UpdateUserSpaceAsyncWithHttpInfo (string userId, string spaceId, SpaceRepresentation body = null);
         #endregion Asynchronous Operations
     }
 
@@ -220,6 +1074,922 @@ namespace IO.Swagger.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// Add new Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns></returns>
+        public void AddSpaceCollaborators (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+             AddSpaceCollaboratorsWithHttpInfo(userId, spaceId, body);
+        }
+
+        /// <summary>
+        /// Add new Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AddSpaceCollaboratorsWithHttpInfo (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->AddSpaceCollaborators");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->AddSpaceCollaborators");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Add new Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task AddSpaceCollaboratorsAsync (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+             await AddSpaceCollaboratorsAsyncWithHttpInfo(userId, spaceId, body);
+
+        }
+
+        /// <summary>
+        /// Add new Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AddSpaceCollaboratorsAsyncWithHttpInfo (string userId, string spaceId, TypedGenericDataRepresentationListUserData body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->AddSpaceCollaborators");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->AddSpaceCollaborators");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns></returns>
+        public void DeleteUserSpace (string userId, string spaceId)
+        {
+             DeleteUserSpaceWithHttpInfo(userId, spaceId);
+        }
+
+        /// <summary>
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DeleteUserSpaceWithHttpInfo (string userId, string spaceId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteUserSpace");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->DeleteUserSpace");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DeleteUserSpaceAsync (string userId, string spaceId)
+        {
+             await DeleteUserSpaceAsyncWithHttpInfo(userId, spaceId);
+
+        }
+
+        /// <summary>
+        /// Delete space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUserSpaceAsyncWithHttpInfo (string userId, string spaceId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DeleteUserSpace");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->DeleteUserSpace");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Print Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns></returns>
+        public void DownloadPdf (string userId, string documentId, string theme = null, string format = null)
+        {
+             DownloadPdfWithHttpInfo(userId, documentId, theme, format);
+        }
+
+        /// <summary>
+        /// Print Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DownloadPdfWithHttpInfo (string userId, string documentId, string theme = null, string format = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DownloadPdf");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->DownloadPdf");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}/print";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (theme != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "theme", theme)); // query parameter
+            if (format != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "format", format)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadPdf", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Print Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadPdfAsync (string userId, string documentId, string theme = null, string format = null)
+        {
+             await DownloadPdfAsyncWithHttpInfo(userId, documentId, theme, format);
+
+        }
+
+        /// <summary>
+        /// Print Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="theme">Theme (optional)</param>
+        /// <param name="format">format (optional, default to pdf)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DownloadPdfAsyncWithHttpInfo (string userId, string documentId, string theme = null, string format = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DownloadPdf");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->DownloadPdf");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}/print";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (theme != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "theme", theme)); // query parameter
+            if (format != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "format", format)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadPdf", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Download Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns></returns>
+        public void DownloadUserDocumentXml (string userId, string documentId)
+        {
+             DownloadUserDocumentXmlWithHttpInfo(userId, documentId);
+        }
+
+        /// <summary>
+        /// Download Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DownloadUserDocumentXmlWithHttpInfo (string userId, string documentId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DownloadUserDocumentXml");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->DownloadUserDocumentXml");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}/download";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadUserDocumentXml", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Download Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DownloadUserDocumentXmlAsync (string userId, string documentId)
+        {
+             await DownloadUserDocumentXmlAsyncWithHttpInfo(userId, documentId);
+
+        }
+
+        /// <summary>
+        /// Download Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DownloadUserDocumentXmlAsyncWithHttpInfo (string userId, string documentId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->DownloadUserDocumentXml");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->DownloadUserDocumentXml");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}/download";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DownloadUserDocumentXml", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>NotificationsRepresentation</returns>
+        public NotificationsRepresentation GetNotifications (string userId, List<string> space = null, string status = null)
+        {
+             ApiResponse<NotificationsRepresentation> localVarResponse = GetNotificationsWithHttpInfo(userId, space, status);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>ApiResponse of NotificationsRepresentation</returns>
+        public ApiResponse< NotificationsRepresentation > GetNotificationsWithHttpInfo (string userId, List<string> space = null, string status = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetNotifications");
+
+            var localVarPath = "/api/users/{userId}/notifications";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
+            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotifications", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotificationsRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotificationsRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationsRepresentation)));
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of NotificationsRepresentation</returns>
+        public async System.Threading.Tasks.Task<NotificationsRepresentation> GetNotificationsAsync (string userId, List<string> space = null, string status = null)
+        {
+             ApiResponse<NotificationsRepresentation> localVarResponse = await GetNotificationsAsyncWithHttpInfo(userId, space, status);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of ApiResponse (NotificationsRepresentation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<NotificationsRepresentation>> GetNotificationsAsyncWithHttpInfo (string userId, List<string> space = null, string status = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetNotifications");
+
+            var localVarPath = "/api/users/{userId}/notifications";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
+            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetNotifications", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<NotificationsRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (NotificationsRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(NotificationsRepresentation)));
+        }
+
+        /// <summary>
+        /// Get parties 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>GenericDataRepresentationListPartyData</returns>
+        public GenericDataRepresentationListPartyData GetParties (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+             ApiResponse<GenericDataRepresentationListPartyData> localVarResponse = GetPartiesWithHttpInfo(userId, filterText, offset, limit, space);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get parties 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListPartyData</returns>
+        public ApiResponse< GenericDataRepresentationListPartyData > GetPartiesWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetParties");
+
+            var localVarPath = "/api/users/{userId}/parties";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetParties", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListPartyData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListPartyData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListPartyData)));
+        }
+
+        /// <summary>
+        /// Get parties 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of GenericDataRepresentationListPartyData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListPartyData> GetPartiesAsync (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+             ApiResponse<GenericDataRepresentationListPartyData> localVarResponse = await GetPartiesAsyncWithHttpInfo(userId, filterText, offset, limit, space);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get parties 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter Text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max result (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListPartyData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListPartyData>> GetPartiesAsyncWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetParties");
+
+            var localVarPath = "/api/users/{userId}/parties";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetParties", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListPartyData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListPartyData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListPartyData)));
         }
 
         /// <summary>
@@ -355,6 +2125,924 @@ namespace IO.Swagger.Api
             return new ApiResponse<UserRepresentation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (UserRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserRepresentation)));
+        }
+
+        /// <summary>
+        /// Return one Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>DocumentRepresentation</returns>
+        public DocumentRepresentation GetUserDocument (string userId, string documentId)
+        {
+             ApiResponse<DocumentRepresentation> localVarResponse = GetUserDocumentWithHttpInfo(userId, documentId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return one Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>ApiResponse of DocumentRepresentation</returns>
+        public ApiResponse< DocumentRepresentation > GetUserDocumentWithHttpInfo (string userId, string documentId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserDocument");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->GetUserDocument");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocumentRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DocumentRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentRepresentation)));
+        }
+
+        /// <summary>
+        /// Return one Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of DocumentRepresentation</returns>
+        public async System.Threading.Tasks.Task<DocumentRepresentation> GetUserDocumentAsync (string userId, string documentId)
+        {
+             ApiResponse<DocumentRepresentation> localVarResponse = await GetUserDocumentAsyncWithHttpInfo(userId, documentId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Return one Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <returns>Task of ApiResponse (DocumentRepresentation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentRepresentation>> GetUserDocumentAsyncWithHttpInfo (string userId, string documentId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserDocument");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->GetUserDocument");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocumentRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DocumentRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentRepresentation)));
+        }
+
+        /// <summary>
+        /// Return List of Documents 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>GenericDataRepresentationListDocumentData</returns>
+        public GenericDataRepresentationListDocumentData GetUserDocuments (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = GetUserDocumentsWithHttpInfo(userId, filterText, offset, limit, space);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return List of Documents 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListDocumentData</returns>
+        public ApiResponse< GenericDataRepresentationListDocumentData > GetUserDocumentsWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserDocuments");
+
+            var localVarPath = "/api/users/{userId}/documents";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDocuments", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListDocumentData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListDocumentData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListDocumentData)));
+        }
+
+        /// <summary>
+        /// Return List of Documents 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of GenericDataRepresentationListDocumentData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> GetUserDocumentsAsync (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = await GetUserDocumentsAsyncWithHttpInfo(userId, filterText, offset, limit, space);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Return List of Documents 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="filterText">Filter text (optional)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Maz results (optional, default to 10)</param>
+        /// <param name="space">Space Ids (optional)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListDocumentData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> GetUserDocumentsAsyncWithHttpInfo (string userId, string filterText = null, int? offset = null, int? limit = null, List<string> space = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserDocuments");
+
+            var localVarPath = "/api/users/{userId}/documents";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (filterText != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "filterText", filterText)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserDocuments", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListDocumentData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListDocumentData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListDocumentData)));
+        }
+
+        /// <summary>
+        /// Return one Space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>SpaceRepresentation</returns>
+        public SpaceRepresentation GetUserSpace (string userId, string spaceId)
+        {
+             ApiResponse<SpaceRepresentation> localVarResponse = GetUserSpaceWithHttpInfo(userId, spaceId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return one Space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>ApiResponse of SpaceRepresentation</returns>
+        public ApiResponse< SpaceRepresentation > GetUserSpaceWithHttpInfo (string userId, string spaceId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpace");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->GetUserSpace");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpaceRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SpaceRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpaceRepresentation)));
+        }
+
+        /// <summary>
+        /// Return one Space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of SpaceRepresentation</returns>
+        public async System.Threading.Tasks.Task<SpaceRepresentation> GetUserSpaceAsync (string userId, string spaceId)
+        {
+             ApiResponse<SpaceRepresentation> localVarResponse = await GetUserSpaceAsyncWithHttpInfo(userId, spaceId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Return one Space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <returns>Task of ApiResponse (SpaceRepresentation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SpaceRepresentation>> GetUserSpaceAsyncWithHttpInfo (string userId, string spaceId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpace");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->GetUserSpace");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpaceRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SpaceRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpaceRepresentation)));
+        }
+
+        /// <summary>
+        /// Return list of Collaborators 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListUserData</returns>
+        public GenericDataRepresentationListUserData GetUserSpaceCollaborators (string userId, string spaceId, int? offset = null, int? limit = null)
+        {
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = GetUserSpaceCollaboratorsWithHttpInfo(userId, spaceId, offset, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return list of Collaborators 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListUserData</returns>
+        public ApiResponse< GenericDataRepresentationListUserData > GetUserSpaceCollaboratorsWithHttpInfo (string userId, string spaceId, int? offset = null, int? limit = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpaceCollaborators");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->GetUserSpaceCollaborators");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListUserData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListUserData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListUserData)));
+        }
+
+        /// <summary>
+        /// Return list of Collaborators 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListUserData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListUserData> GetUserSpaceCollaboratorsAsync (string userId, string spaceId, int? offset = null, int? limit = null)
+        {
+             ApiResponse<GenericDataRepresentationListUserData> localVarResponse = await GetUserSpaceCollaboratorsAsyncWithHttpInfo(userId, spaceId, offset, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Return list of Collaborators 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListUserData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListUserData>> GetUserSpaceCollaboratorsAsyncWithHttpInfo (string userId, string spaceId, int? offset = null, int? limit = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpaceCollaborators");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->GetUserSpaceCollaborators");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/collaborators";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListUserData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListUserData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListUserData)));
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>GenericDataRepresentationListRequestData</returns>
+        public GenericDataRepresentationListRequestData GetUserSpaceRequestAccess (string userId, string spaceId, string status = null)
+        {
+             ApiResponse<GenericDataRepresentationListRequestData> localVarResponse = GetUserSpaceRequestAccessWithHttpInfo(userId, spaceId, status);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListRequestData</returns>
+        public ApiResponse< GenericDataRepresentationListRequestData > GetUserSpaceRequestAccessWithHttpInfo (string userId, string spaceId, string status = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpaceRequestAccess");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->GetUserSpaceRequestAccess");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/request-access";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpaceRequestAccess", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListRequestData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListRequestData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListRequestData)));
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of GenericDataRepresentationListRequestData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListRequestData> GetUserSpaceRequestAccessAsync (string userId, string spaceId, string status = null)
+        {
+             ApiResponse<GenericDataRepresentationListRequestData> localVarResponse = await GetUserSpaceRequestAccessAsyncWithHttpInfo(userId, spaceId, status);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get Notifications 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="status">Status (optional, default to pending)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListRequestData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListRequestData>> GetUserSpaceRequestAccessAsyncWithHttpInfo (string userId, string spaceId, string status = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpaceRequestAccess");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->GetUserSpaceRequestAccess");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/request-access";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpaceRequestAccess", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListRequestData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListRequestData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListRequestData)));
+        }
+
+        /// <summary>
+        /// Return allowed Spaces of User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>GenericDataRepresentationListSpaceData</returns>
+        public GenericDataRepresentationListSpaceData GetUserSpaces (string userId, string role = null, int? offset = null, int? limit = null)
+        {
+             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = GetUserSpacesWithHttpInfo(userId, role, offset, limit);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Return allowed Spaces of User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListSpaceData</returns>
+        public ApiResponse< GenericDataRepresentationListSpaceData > GetUserSpacesWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpaces");
+
+            var localVarPath = "/api/users/{userId}/spaces";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpaces", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListSpaceData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListSpaceData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListSpaceData)));
+        }
+
+        /// <summary>
+        /// Return allowed Spaces of User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of GenericDataRepresentationListSpaceData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListSpaceData> GetUserSpacesAsync (string userId, string role = null, int? offset = null, int? limit = null)
+        {
+             ApiResponse<GenericDataRepresentationListSpaceData> localVarResponse = await GetUserSpacesAsyncWithHttpInfo(userId, role, offset, limit);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Return allowed Spaces of User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="role">Role (optional, default to owner)</param>
+        /// <param name="offset">First result (optional, default to 0)</param>
+        /// <param name="limit">Max results (optional, default to 10)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListSpaceData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListSpaceData>> GetUserSpacesAsyncWithHttpInfo (string userId, string role = null, int? offset = null, int? limit = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->GetUserSpaces");
+
+            var localVarPath = "/api/users/{userId}/spaces";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (role != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "role", role)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetUserSpaces", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListSpaceData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListSpaceData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListSpaceData)));
         }
 
         /// <summary>
@@ -502,6 +3190,807 @@ namespace IO.Swagger.Api
             return new ApiResponse<GenericDataRepresentationListUserData>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (GenericDataRepresentationListUserData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListUserData)));
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns></returns>
+        public void RemoveSpaceCollaborators (string userId, string spaceId, string collaboratorId)
+        {
+             RemoveSpaceCollaboratorsWithHttpInfo(userId, spaceId, collaboratorId);
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> RemoveSpaceCollaboratorsWithHttpInfo (string userId, string spaceId, string collaboratorId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->RemoveSpaceCollaborators");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->RemoveSpaceCollaborators");
+            // verify the required parameter 'collaboratorId' is set
+            if (collaboratorId == null)
+                throw new ApiException(400, "Missing required parameter 'collaboratorId' when calling UsersApi->RemoveSpaceCollaborators");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/collaborators/{collaboratorId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (collaboratorId != null) localVarPathParams.Add("collaboratorId", Configuration.ApiClient.ParameterToString(collaboratorId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RemoveSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task RemoveSpaceCollaboratorsAsync (string userId, string spaceId, string collaboratorId)
+        {
+             await RemoveSpaceCollaboratorsAsyncWithHttpInfo(userId, spaceId, collaboratorId);
+
+        }
+
+        /// <summary>
+        /// Remove Collaborator 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="collaboratorId">User Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> RemoveSpaceCollaboratorsAsyncWithHttpInfo (string userId, string spaceId, string collaboratorId)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->RemoveSpaceCollaborators");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->RemoveSpaceCollaborators");
+            // verify the required parameter 'collaboratorId' is set
+            if (collaboratorId == null)
+                throw new ApiException(400, "Missing required parameter 'collaboratorId' when calling UsersApi->RemoveSpaceCollaborators");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}/collaborators/{collaboratorId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (collaboratorId != null) localVarPathParams.Add("collaboratorId", Configuration.ApiClient.ParameterToString(collaboratorId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("RemoveSpaceCollaborators", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Search Document Search on allowed user (session) spaces
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>GenericDataRepresentationListDocumentData</returns>
+        public GenericDataRepresentationListDocumentData SearchUserDocuments (string userId, DocumentQueryRepresentation body = null)
+        {
+             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = SearchUserDocumentsWithHttpInfo(userId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search Document Search on allowed user (session) spaces
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of GenericDataRepresentationListDocumentData</returns>
+        public ApiResponse< GenericDataRepresentationListDocumentData > SearchUserDocumentsWithHttpInfo (string userId, DocumentQueryRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->SearchUserDocuments");
+
+            var localVarPath = "/api/users/{userId}/documents/search";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchUserDocuments", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListDocumentData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListDocumentData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListDocumentData)));
+        }
+
+        /// <summary>
+        /// Search Document Search on allowed user (session) spaces
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of GenericDataRepresentationListDocumentData</returns>
+        public async System.Threading.Tasks.Task<GenericDataRepresentationListDocumentData> SearchUserDocumentsAsync (string userId, DocumentQueryRepresentation body = null)
+        {
+             ApiResponse<GenericDataRepresentationListDocumentData> localVarResponse = await SearchUserDocumentsAsyncWithHttpInfo(userId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Search Document Search on allowed user (session) spaces
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (GenericDataRepresentationListDocumentData)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListDocumentData>> SearchUserDocumentsAsyncWithHttpInfo (string userId, DocumentQueryRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->SearchUserDocuments");
+
+            var localVarPath = "/api/users/{userId}/documents/search";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchUserDocuments", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GenericDataRepresentationListDocumentData>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GenericDataRepresentationListDocumentData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListDocumentData)));
+        }
+
+        /// <summary>
+        /// Update User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>UserRepresentation</returns>
+        public UserRepresentation UpdateUser (string userId, UserRepresentation body = null)
+        {
+             ApiResponse<UserRepresentation> localVarResponse = UpdateUserWithHttpInfo(userId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of UserRepresentation</returns>
+        public ApiResponse< UserRepresentation > UpdateUserWithHttpInfo (string userId, UserRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUser");
+
+            var localVarPath = "/api/users/{userId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserRepresentation)));
+        }
+
+        /// <summary>
+        /// Update User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of UserRepresentation</returns>
+        public async System.Threading.Tasks.Task<UserRepresentation> UpdateUserAsync (string userId, UserRepresentation body = null)
+        {
+             ApiResponse<UserRepresentation> localVarResponse = await UpdateUserAsyncWithHttpInfo(userId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update User 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (UserRepresentation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserRepresentation>> UpdateUserAsyncWithHttpInfo (string userId, UserRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUser");
+
+            var localVarPath = "/api/users/{userId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserRepresentation)));
+        }
+
+        /// <summary>
+        /// Update a Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>DocumentRepresentation</returns>
+        public DocumentRepresentation UpdateUserDocument (string userId, string documentId, DocumentRepresentation body = null)
+        {
+             ApiResponse<DocumentRepresentation> localVarResponse = UpdateUserDocumentWithHttpInfo(userId, documentId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of DocumentRepresentation</returns>
+        public ApiResponse< DocumentRepresentation > UpdateUserDocumentWithHttpInfo (string userId, string documentId, DocumentRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUserDocument");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->UpdateUserDocument");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUserDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocumentRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DocumentRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentRepresentation)));
+        }
+
+        /// <summary>
+        /// Update a Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of DocumentRepresentation</returns>
+        public async System.Threading.Tasks.Task<DocumentRepresentation> UpdateUserDocumentAsync (string userId, string documentId, DocumentRepresentation body = null)
+        {
+             ApiResponse<DocumentRepresentation> localVarResponse = await UpdateUserDocumentAsyncWithHttpInfo(userId, documentId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update a Document 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="documentId">Document Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (DocumentRepresentation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<DocumentRepresentation>> UpdateUserDocumentAsyncWithHttpInfo (string userId, string documentId, DocumentRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUserDocument");
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling UsersApi->UpdateUserDocument");
+
+            var localVarPath = "/api/users/{userId}/documents/{documentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (documentId != null) localVarPathParams.Add("documentId", Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUserDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<DocumentRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (DocumentRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(DocumentRepresentation)));
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>SpaceRepresentation</returns>
+        public SpaceRepresentation UpdateUserSpace (string userId, string spaceId, SpaceRepresentation body = null)
+        {
+             ApiResponse<SpaceRepresentation> localVarResponse = UpdateUserSpaceWithHttpInfo(userId, spaceId, body);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>ApiResponse of SpaceRepresentation</returns>
+        public ApiResponse< SpaceRepresentation > UpdateUserSpaceWithHttpInfo (string userId, string spaceId, SpaceRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUserSpace");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->UpdateUserSpace");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpaceRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SpaceRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpaceRepresentation)));
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of SpaceRepresentation</returns>
+        public async System.Threading.Tasks.Task<SpaceRepresentation> UpdateUserSpaceAsync (string userId, string spaceId, SpaceRepresentation body = null)
+        {
+             ApiResponse<SpaceRepresentation> localVarResponse = await UpdateUserSpaceAsyncWithHttpInfo(userId, spaceId, body);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update space 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="userId">User Id</param>
+        /// <param name="spaceId">Space Id</param>
+        /// <param name="body"> (optional)</param>
+        /// <returns>Task of ApiResponse (SpaceRepresentation)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SpaceRepresentation>> UpdateUserSpaceAsyncWithHttpInfo (string userId, string spaceId, SpaceRepresentation body = null)
+        {
+            // verify the required parameter 'userId' is set
+            if (userId == null)
+                throw new ApiException(400, "Missing required parameter 'userId' when calling UsersApi->UpdateUserSpace");
+            // verify the required parameter 'spaceId' is set
+            if (spaceId == null)
+                throw new ApiException(400, "Missing required parameter 'spaceId' when calling UsersApi->UpdateUserSpace");
+
+            var localVarPath = "/api/users/{userId}/spaces/{spaceId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (userId != null) localVarPathParams.Add("userId", Configuration.ApiClient.ParameterToString(userId)); // path parameter
+            if (spaceId != null) localVarPathParams.Add("spaceId", Configuration.ApiClient.ParameterToString(spaceId)); // path parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UpdateUserSpace", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SpaceRepresentation>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (SpaceRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(SpaceRepresentation)));
         }
 
     }

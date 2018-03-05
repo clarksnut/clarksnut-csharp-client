@@ -33,29 +33,29 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MultipartFormDataInput" /> class.
         /// </summary>
-        /// <param name="FormDataMap">FormDataMap.</param>
         /// <param name="FormData">FormData.</param>
+        /// <param name="FormDataMap">FormDataMap.</param>
         /// <param name="Parts">Parts.</param>
         /// <param name="Preamble">Preamble.</param>
-        public MultipartFormDataInput(Dictionary<string, List<InputPart>> FormDataMap = default(Dictionary<string, List<InputPart>>), Dictionary<string, InputPart> FormData = default(Dictionary<string, InputPart>), List<InputPart> Parts = default(List<InputPart>), string Preamble = default(string))
+        public MultipartFormDataInput(Dictionary<string, InputPart> FormData = default(Dictionary<string, InputPart>), Dictionary<string, List<InputPart>> FormDataMap = default(Dictionary<string, List<InputPart>>), List<InputPart> Parts = default(List<InputPart>), string Preamble = default(string))
         {
-            this.FormDataMap = FormDataMap;
             this.FormData = FormData;
+            this.FormDataMap = FormDataMap;
             this.Parts = Parts;
             this.Preamble = Preamble;
         }
         
         /// <summary>
-        /// Gets or Sets FormDataMap
-        /// </summary>
-        [DataMember(Name="formDataMap", EmitDefaultValue=false)]
-        public Dictionary<string, List<InputPart>> FormDataMap { get; set; }
-
-        /// <summary>
         /// Gets or Sets FormData
         /// </summary>
         [DataMember(Name="formData", EmitDefaultValue=false)]
         public Dictionary<string, InputPart> FormData { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FormDataMap
+        /// </summary>
+        [DataMember(Name="formDataMap", EmitDefaultValue=false)]
+        public Dictionary<string, List<InputPart>> FormDataMap { get; set; }
 
         /// <summary>
         /// Gets or Sets Parts
@@ -77,8 +77,8 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class MultipartFormDataInput {\n");
-            sb.Append("  FormDataMap: ").Append(FormDataMap).Append("\n");
             sb.Append("  FormData: ").Append(FormData).Append("\n");
+            sb.Append("  FormDataMap: ").Append(FormDataMap).Append("\n");
             sb.Append("  Parts: ").Append(Parts).Append("\n");
             sb.Append("  Preamble: ").Append(Preamble).Append("\n");
             sb.Append("}\n");
@@ -116,14 +116,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.FormDataMap == input.FormDataMap ||
-                    this.FormDataMap != null &&
-                    this.FormDataMap.SequenceEqual(input.FormDataMap)
-                ) && 
-                (
                     this.FormData == input.FormData ||
                     this.FormData != null &&
                     this.FormData.SequenceEqual(input.FormData)
+                ) && 
+                (
+                    this.FormDataMap == input.FormDataMap ||
+                    this.FormDataMap != null &&
+                    this.FormDataMap.SequenceEqual(input.FormDataMap)
                 ) && 
                 (
                     this.Parts == input.Parts ||
@@ -146,10 +146,10 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.FormDataMap != null)
-                    hashCode = hashCode * 59 + this.FormDataMap.GetHashCode();
                 if (this.FormData != null)
                     hashCode = hashCode * 59 + this.FormData.GetHashCode();
+                if (this.FormDataMap != null)
+                    hashCode = hashCode * 59 + this.FormDataMap.GetHashCode();
                 if (this.Parts != null)
                     hashCode = hashCode * 59 + this.Parts.GetHashCode();
                 if (this.Preamble != null)

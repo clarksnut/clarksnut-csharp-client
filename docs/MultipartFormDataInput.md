@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FormDataMap** | **Dictionary&lt;string, List&lt;InputPart&gt;&gt;** |  | [optional] 
 **FormData** | [**Dictionary&lt;string, InputPart&gt;**](InputPart.md) |  | [optional] 
+**FormDataMap** | **Dictionary&lt;string, List&lt;InputPart&gt;&gt;** |  | [optional] 
 **Parts** | [**List&lt;InputPart&gt;**](InputPart.md) |  | [optional] 
 **Preamble** | **string** |  | [optional] 
 

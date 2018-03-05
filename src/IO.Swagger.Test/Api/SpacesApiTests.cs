@@ -65,19 +65,6 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
-        /// Test AddSpaceCollaborators
-        /// </summary>
-        [Test]
-        public void AddSpaceCollaboratorsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string spaceId = null;
-            //TypedGenericDataRepresentationListUserData body = null;
-            //instance.AddSpaceCollaborators(spaceId, body);
-            
-        }
-        
-        /// <summary>
         /// Test CreateSpace
         /// </summary>
         [Test]
@@ -86,18 +73,6 @@ namespace IO.Swagger.Test
             // TODO uncomment below to test the method and replace null with proper value
             //SpaceRepresentation body = null;
             //instance.CreateSpace(body);
-            
-        }
-        
-        /// <summary>
-        /// Test DeleteUserSpace
-        /// </summary>
-        [Test]
-        public void DeleteUserSpaceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string spaceId = null;
-            //instance.DeleteUserSpace(spaceId);
             
         }
         
@@ -114,20 +89,6 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
-        /// Test GetSpaceCollaborators
-        /// </summary>
-        [Test]
-        public void GetSpaceCollaboratorsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string spaceId = null;
-            //int? offset = null;
-            //int? limit = null;
-            //var response = instance.GetSpaceCollaborators(spaceId, offset, limit);
-            //Assert.IsInstanceOf<GenericDataRepresentationListUserData> (response, "response is GenericDataRepresentationListUserData");
-        }
-        
-        /// <summary>
         /// Test GetSpaces
         /// </summary>
         [Test]
@@ -140,32 +101,6 @@ namespace IO.Swagger.Test
             //int? limit = null;
             //var response = instance.GetSpaces(assignedId, filterText, offset, limit);
             //Assert.IsInstanceOf<GenericDataRepresentationListSpaceData> (response, "response is GenericDataRepresentationListSpaceData");
-        }
-        
-        /// <summary>
-        /// Test RemoveSpaceCollaborators
-        /// </summary>
-        [Test]
-        public void RemoveSpaceCollaboratorsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string spaceId = null;
-            //string userId = null;
-            //instance.RemoveSpaceCollaborators(spaceId, userId);
-            
-        }
-        
-        /// <summary>
-        /// Test UpdateUserSpace
-        /// </summary>
-        [Test]
-        public void UpdateUserSpaceTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string spaceId = null;
-            //SpaceRepresentation body = null;
-            //var response = instance.UpdateUserSpace(spaceId, body);
-            //Assert.IsInstanceOf<SpaceRepresentation> (response, "response is SpaceRepresentation");
         }
         
     }

@@ -25,29 +25,6 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get Request accesses
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>GenericDataRepresentationListRequestData</returns>
-        GenericDataRepresentationListRequestData GetRequestAccess (List<string> space = null, string status = null);
-
-        /// <summary>
-        /// Get Request accesses
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>ApiResponse of GenericDataRepresentationListRequestData</returns>
-        ApiResponse<GenericDataRepresentationListRequestData> GetRequestAccessWithHttpInfo (List<string> space = null, string status = null);
-        /// <summary>
         /// Request access
         /// </summary>
         /// <remarks>
@@ -93,29 +70,6 @@ namespace IO.Swagger.Api
         ApiResponse<Object> UpdateAccessSpaceWithHttpInfo (string requestId, RequestRepresentation body = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
-        /// <summary>
-        /// Get Request accesses
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>Task of GenericDataRepresentationListRequestData</returns>
-        System.Threading.Tasks.Task<GenericDataRepresentationListRequestData> GetRequestAccessAsync (List<string> space = null, string status = null);
-
-        /// <summary>
-        /// Get Request accesses
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>Task of ApiResponse (GenericDataRepresentationListRequestData)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListRequestData>> GetRequestAccessAsyncWithHttpInfo (List<string> space = null, string status = null);
         /// <summary>
         /// Request access
         /// </summary>
@@ -258,141 +212,6 @@ namespace IO.Swagger.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
-        }
-
-        /// <summary>
-        /// Get Request accesses 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>GenericDataRepresentationListRequestData</returns>
-        public GenericDataRepresentationListRequestData GetRequestAccess (List<string> space = null, string status = null)
-        {
-             ApiResponse<GenericDataRepresentationListRequestData> localVarResponse = GetRequestAccessWithHttpInfo(space, status);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get Request accesses 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>ApiResponse of GenericDataRepresentationListRequestData</returns>
-        public ApiResponse< GenericDataRepresentationListRequestData > GetRequestAccessWithHttpInfo (List<string> space = null, string status = null)
-        {
-
-            var localVarPath = "/api/request-access";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
-            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRequestAccess", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<GenericDataRepresentationListRequestData>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GenericDataRepresentationListRequestData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListRequestData)));
-        }
-
-        /// <summary>
-        /// Get Request accesses 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>Task of GenericDataRepresentationListRequestData</returns>
-        public async System.Threading.Tasks.Task<GenericDataRepresentationListRequestData> GetRequestAccessAsync (List<string> space = null, string status = null)
-        {
-             ApiResponse<GenericDataRepresentationListRequestData> localVarResponse = await GetRequestAccessAsyncWithHttpInfo(space, status);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get Request accesses 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="space">Space Ids (optional)</param>
-        /// <param name="status">Status (optional, default to pending)</param>
-        /// <returns>Task of ApiResponse (GenericDataRepresentationListRequestData)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<GenericDataRepresentationListRequestData>> GetRequestAccessAsyncWithHttpInfo (List<string> space = null, string status = null)
-        {
-
-            var localVarPath = "/api/request-access";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (space != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("multi", "space", space)); // query parameter
-            if (status != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "status", status)); // query parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("GetRequestAccess", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<GenericDataRepresentationListRequestData>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (GenericDataRepresentationListRequestData) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GenericDataRepresentationListRequestData)));
         }
 
         /// <summary>

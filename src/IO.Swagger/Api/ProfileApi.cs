@@ -25,31 +25,10 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Update User Profile
-        /// </summary>
-        /// <remarks>
-        /// [user] role required
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>UserRepresentation</returns>
-        UserRepresentation CurrentUser (UserRepresentation body = null);
-
-        /// <summary>
-        /// Update User Profile
-        /// </summary>
-        /// <remarks>
-        /// [user] role required
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of UserRepresentation</returns>
-        ApiResponse<UserRepresentation> CurrentUserWithHttpInfo (UserRepresentation body = null);
-        /// <summary>
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>UserRepresentation</returns>
@@ -59,7 +38,7 @@ namespace IO.Swagger.Api
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of UserRepresentation</returns>
@@ -67,31 +46,10 @@ namespace IO.Swagger.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Update User Profile
-        /// </summary>
-        /// <remarks>
-        /// [user] role required
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of UserRepresentation</returns>
-        System.Threading.Tasks.Task<UserRepresentation> CurrentUserAsync (UserRepresentation body = null);
-
-        /// <summary>
-        /// Update User Profile
-        /// </summary>
-        /// <remarks>
-        /// [user] role required
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (UserRepresentation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserRepresentation>> CurrentUserAsyncWithHttpInfo (UserRepresentation body = null);
-        /// <summary>
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of UserRepresentation</returns>
@@ -101,7 +59,7 @@ namespace IO.Swagger.Api
         /// Return User Profile
         /// </summary>
         /// <remarks>
-        /// [user] role required
+        /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (UserRepresentation)</returns>
@@ -207,150 +165,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Update User Profile [user] role required
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>UserRepresentation</returns>
-        public UserRepresentation CurrentUser (UserRepresentation body = null)
-        {
-             ApiResponse<UserRepresentation> localVarResponse = CurrentUserWithHttpInfo(body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update User Profile [user] role required
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of UserRepresentation</returns>
-        public ApiResponse< UserRepresentation > CurrentUserWithHttpInfo (UserRepresentation body = null)
-        {
-
-            var localVarPath = "/api/profile";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CurrentUser", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<UserRepresentation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UserRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserRepresentation)));
-        }
-
-        /// <summary>
-        /// Update User Profile [user] role required
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of UserRepresentation</returns>
-        public async System.Threading.Tasks.Task<UserRepresentation> CurrentUserAsync (UserRepresentation body = null)
-        {
-             ApiResponse<UserRepresentation> localVarResponse = await CurrentUserAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Update User Profile [user] role required
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (UserRepresentation)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserRepresentation>> CurrentUserAsyncWithHttpInfo (UserRepresentation body = null)
-        {
-
-            var localVarPath = "/api/profile";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("CurrentUser", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<UserRepresentation>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (UserRepresentation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserRepresentation)));
-        }
-
-        /// <summary>
-        /// Return User Profile [user] role required
+        /// Return User Profile 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>UserRepresentation</returns>
@@ -361,7 +176,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Return User Profile [user] role required
+        /// Return User Profile 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of UserRepresentation</returns>
@@ -411,7 +226,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Return User Profile [user] role required
+        /// Return User Profile 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of UserRepresentation</returns>
@@ -423,7 +238,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Return User Profile [user] role required
+        /// Return User Profile 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (UserRepresentation)</returns>

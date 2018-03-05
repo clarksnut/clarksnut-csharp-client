@@ -65,28 +65,29 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
-        /// Test DownloadPdf
+        /// Test DownloadDocumentPdf
         /// </summary>
         [Test]
-        public void DownloadPdfTest()
+        public void DownloadDocumentPdfTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string documentId = null;
             //string theme = null;
+            //string locale = null;
             //string format = null;
-            //instance.DownloadPdf(documentId, theme, format);
+            //instance.DownloadDocumentPdf(documentId, theme, locale, format);
             
         }
         
         /// <summary>
-        /// Test DownloadXml
+        /// Test DownloadDocumentXml
         /// </summary>
         [Test]
-        public void DownloadXmlTest()
+        public void DownloadDocumentXmlTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string documentId = null;
-            //instance.DownloadXml(documentId);
+            //instance.DownloadDocumentXml(documentId);
             
         }
         
@@ -103,21 +104,6 @@ namespace IO.Swagger.Test
         }
         
         /// <summary>
-        /// Test GetDocuments
-        /// </summary>
-        [Test]
-        public void GetDocumentsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string filterText = null;
-            //int? offset = null;
-            //int? limit = null;
-            //List<string> space = null;
-            //var response = instance.GetDocuments(filterText, offset, limit, space);
-            //Assert.IsInstanceOf<GenericDataRepresentationListDocumentData> (response, "response is GenericDataRepresentationListDocumentData");
-        }
-        
-        /// <summary>
         /// Test ImportDocument
         /// </summary>
         [Test]
@@ -127,31 +113,6 @@ namespace IO.Swagger.Test
             //MultipartFormDataInput body = null;
             //instance.ImportDocument(body);
             
-        }
-        
-        /// <summary>
-        /// Test SearchDocuments
-        /// </summary>
-        [Test]
-        public void SearchDocumentsTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //DocumentQueryRepresentation body = null;
-            //var response = instance.SearchDocuments(body);
-            //Assert.IsInstanceOf<GenericDataRepresentationListDocumentData> (response, "response is GenericDataRepresentationListDocumentData");
-        }
-        
-        /// <summary>
-        /// Test UpdateDocument
-        /// </summary>
-        [Test]
-        public void UpdateDocumentTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //string documentId = null;
-            //DocumentRepresentation body = null;
-            //var response = instance.UpdateDocument(documentId, body);
-            //Assert.IsInstanceOf<DocumentRepresentation> (response, "response is DocumentRepresentation");
         }
         
     }

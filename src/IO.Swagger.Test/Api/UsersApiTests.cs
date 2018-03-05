@@ -65,6 +65,91 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
+        /// Test AddSpaceCollaborators
+        /// </summary>
+        [Test]
+        public void AddSpaceCollaboratorsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string spaceId = null;
+            //TypedGenericDataRepresentationListUserData body = null;
+            //instance.AddSpaceCollaborators(userId, spaceId, body);
+            
+        }
+        
+        /// <summary>
+        /// Test DeleteUserSpace
+        /// </summary>
+        [Test]
+        public void DeleteUserSpaceTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string spaceId = null;
+            //instance.DeleteUserSpace(userId, spaceId);
+            
+        }
+        
+        /// <summary>
+        /// Test DownloadPdf
+        /// </summary>
+        [Test]
+        public void DownloadPdfTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string documentId = null;
+            //string theme = null;
+            //string format = null;
+            //instance.DownloadPdf(userId, documentId, theme, format);
+            
+        }
+        
+        /// <summary>
+        /// Test DownloadUserDocumentXml
+        /// </summary>
+        [Test]
+        public void DownloadUserDocumentXmlTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string documentId = null;
+            //instance.DownloadUserDocumentXml(userId, documentId);
+            
+        }
+        
+        /// <summary>
+        /// Test GetNotifications
+        /// </summary>
+        [Test]
+        public void GetNotificationsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //List<string> space = null;
+            //string status = null;
+            //var response = instance.GetNotifications(userId, space, status);
+            //Assert.IsInstanceOf<NotificationsRepresentation> (response, "response is NotificationsRepresentation");
+        }
+        
+        /// <summary>
+        /// Test GetParties
+        /// </summary>
+        [Test]
+        public void GetPartiesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string filterText = null;
+            //int? offset = null;
+            //int? limit = null;
+            //List<string> space = null;
+            //var response = instance.GetParties(userId, filterText, offset, limit, space);
+            //Assert.IsInstanceOf<GenericDataRepresentationListPartyData> (response, "response is GenericDataRepresentationListPartyData");
+        }
+        
+        /// <summary>
         /// Test GetUser
         /// </summary>
         [Test]
@@ -74,6 +159,92 @@ namespace IO.Swagger.Test
             //string userId = null;
             //var response = instance.GetUser(userId);
             //Assert.IsInstanceOf<UserRepresentation> (response, "response is UserRepresentation");
+        }
+        
+        /// <summary>
+        /// Test GetUserDocument
+        /// </summary>
+        [Test]
+        public void GetUserDocumentTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string documentId = null;
+            //var response = instance.GetUserDocument(userId, documentId);
+            //Assert.IsInstanceOf<DocumentRepresentation> (response, "response is DocumentRepresentation");
+        }
+        
+        /// <summary>
+        /// Test GetUserDocuments
+        /// </summary>
+        [Test]
+        public void GetUserDocumentsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string filterText = null;
+            //int? offset = null;
+            //int? limit = null;
+            //List<string> space = null;
+            //var response = instance.GetUserDocuments(userId, filterText, offset, limit, space);
+            //Assert.IsInstanceOf<GenericDataRepresentationListDocumentData> (response, "response is GenericDataRepresentationListDocumentData");
+        }
+        
+        /// <summary>
+        /// Test GetUserSpace
+        /// </summary>
+        [Test]
+        public void GetUserSpaceTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string spaceId = null;
+            //var response = instance.GetUserSpace(userId, spaceId);
+            //Assert.IsInstanceOf<SpaceRepresentation> (response, "response is SpaceRepresentation");
+        }
+        
+        /// <summary>
+        /// Test GetUserSpaceCollaborators
+        /// </summary>
+        [Test]
+        public void GetUserSpaceCollaboratorsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string spaceId = null;
+            //int? offset = null;
+            //int? limit = null;
+            //var response = instance.GetUserSpaceCollaborators(userId, spaceId, offset, limit);
+            //Assert.IsInstanceOf<GenericDataRepresentationListUserData> (response, "response is GenericDataRepresentationListUserData");
+        }
+        
+        /// <summary>
+        /// Test GetUserSpaceRequestAccess
+        /// </summary>
+        [Test]
+        public void GetUserSpaceRequestAccessTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string spaceId = null;
+            //string status = null;
+            //var response = instance.GetUserSpaceRequestAccess(userId, spaceId, status);
+            //Assert.IsInstanceOf<GenericDataRepresentationListRequestData> (response, "response is GenericDataRepresentationListRequestData");
+        }
+        
+        /// <summary>
+        /// Test GetUserSpaces
+        /// </summary>
+        [Test]
+        public void GetUserSpacesTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string role = null;
+            //int? offset = null;
+            //int? limit = null;
+            //var response = instance.GetUserSpaces(userId, role, offset, limit);
+            //Assert.IsInstanceOf<GenericDataRepresentationListSpaceData> (response, "response is GenericDataRepresentationListSpaceData");
         }
         
         /// <summary>
@@ -89,6 +260,74 @@ namespace IO.Swagger.Test
             //int? limit = null;
             //var response = instance.GetUsers(username, filterText, offset, limit);
             //Assert.IsInstanceOf<GenericDataRepresentationListUserData> (response, "response is GenericDataRepresentationListUserData");
+        }
+        
+        /// <summary>
+        /// Test RemoveSpaceCollaborators
+        /// </summary>
+        [Test]
+        public void RemoveSpaceCollaboratorsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string spaceId = null;
+            //string collaboratorId = null;
+            //instance.RemoveSpaceCollaborators(userId, spaceId, collaboratorId);
+            
+        }
+        
+        /// <summary>
+        /// Test SearchUserDocuments
+        /// </summary>
+        [Test]
+        public void SearchUserDocumentsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //DocumentQueryRepresentation body = null;
+            //var response = instance.SearchUserDocuments(userId, body);
+            //Assert.IsInstanceOf<GenericDataRepresentationListDocumentData> (response, "response is GenericDataRepresentationListDocumentData");
+        }
+        
+        /// <summary>
+        /// Test UpdateUser
+        /// </summary>
+        [Test]
+        public void UpdateUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //UserRepresentation body = null;
+            //var response = instance.UpdateUser(userId, body);
+            //Assert.IsInstanceOf<UserRepresentation> (response, "response is UserRepresentation");
+        }
+        
+        /// <summary>
+        /// Test UpdateUserDocument
+        /// </summary>
+        [Test]
+        public void UpdateUserDocumentTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string documentId = null;
+            //DocumentRepresentation body = null;
+            //var response = instance.UpdateUserDocument(userId, documentId, body);
+            //Assert.IsInstanceOf<DocumentRepresentation> (response, "response is DocumentRepresentation");
+        }
+        
+        /// <summary>
+        /// Test UpdateUserSpace
+        /// </summary>
+        [Test]
+        public void UpdateUserSpaceTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string userId = null;
+            //string spaceId = null;
+            //SpaceRepresentation body = null;
+            //var response = instance.UpdateUserSpace(userId, spaceId, body);
+            //Assert.IsInstanceOf<SpaceRepresentation> (response, "response is SpaceRepresentation");
         }
         
     }

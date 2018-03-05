@@ -67,20 +67,20 @@ namespace IO.Swagger.Test
 
 
         /// <summary>
-        /// Test the property 'FormDataMap'
-        /// </summary>
-        [Test]
-        public void FormDataMapTest()
-        {
-            // TODO unit test for the property 'FormDataMap'
-        }
-        /// <summary>
         /// Test the property 'FormData'
         /// </summary>
         [Test]
         public void FormDataTest()
         {
             // TODO unit test for the property 'FormData'
+        }
+        /// <summary>
+        /// Test the property 'FormDataMap'
+        /// </summary>
+        [Test]
+        public void FormDataMapTest()
+        {
+            // TODO unit test for the property 'FormDataMap'
         }
         /// <summary>
         /// Test the property 'Parts'

@@ -65,18 +65,6 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
-        /// Test CurrentUser
-        /// </summary>
-        [Test]
-        public void CurrentUserTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //UserRepresentation body = null;
-            //var response = instance.CurrentUser(body);
-            //Assert.IsInstanceOf<UserRepresentation> (response, "response is UserRepresentation");
-        }
-        
-        /// <summary>
         /// Test GetCurrentUser
         /// </summary>
         [Test]

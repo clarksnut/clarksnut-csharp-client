@@ -36,15 +36,15 @@ namespace IO.Swagger.Model
         /// <param name="Type">Type.</param>
         /// <param name="Subtype">Subtype.</param>
         /// <param name="Parameters">Parameters.</param>
-        /// <param name="WildcardSubtype">WildcardSubtype.</param>
         /// <param name="WildcardType">WildcardType.</param>
-        public MediaType(string Type = default(string), string Subtype = default(string), Dictionary<string, string> Parameters = default(Dictionary<string, string>), bool? WildcardSubtype = default(bool?), bool? WildcardType = default(bool?))
+        /// <param name="WildcardSubtype">WildcardSubtype.</param>
+        public MediaType(string Type = default(string), string Subtype = default(string), Dictionary<string, string> Parameters = default(Dictionary<string, string>), bool? WildcardType = default(bool?), bool? WildcardSubtype = default(bool?))
         {
             this.Type = Type;
             this.Subtype = Subtype;
             this.Parameters = Parameters;
-            this.WildcardSubtype = WildcardSubtype;
             this.WildcardType = WildcardType;
+            this.WildcardSubtype = WildcardSubtype;
         }
         
         /// <summary>
@@ -66,16 +66,16 @@ namespace IO.Swagger.Model
         public Dictionary<string, string> Parameters { get; set; }
 
         /// <summary>
-        /// Gets or Sets WildcardSubtype
-        /// </summary>
-        [DataMember(Name="wildcardSubtype", EmitDefaultValue=false)]
-        public bool? WildcardSubtype { get; set; }
-
-        /// <summary>
         /// Gets or Sets WildcardType
         /// </summary>
         [DataMember(Name="wildcardType", EmitDefaultValue=false)]
         public bool? WildcardType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WildcardSubtype
+        /// </summary>
+        [DataMember(Name="wildcardSubtype", EmitDefaultValue=false)]
+        public bool? WildcardSubtype { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,8 +88,8 @@ namespace IO.Swagger.Model
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Subtype: ").Append(Subtype).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
-            sb.Append("  WildcardSubtype: ").Append(WildcardSubtype).Append("\n");
             sb.Append("  WildcardType: ").Append(WildcardType).Append("\n");
+            sb.Append("  WildcardSubtype: ").Append(WildcardSubtype).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -140,14 +140,14 @@ namespace IO.Swagger.Model
                     this.Parameters.SequenceEqual(input.Parameters)
                 ) && 
                 (
-                    this.WildcardSubtype == input.WildcardSubtype ||
-                    (this.WildcardSubtype != null &&
-                    this.WildcardSubtype.Equals(input.WildcardSubtype))
-                ) && 
-                (
                     this.WildcardType == input.WildcardType ||
                     (this.WildcardType != null &&
                     this.WildcardType.Equals(input.WildcardType))
+                ) && 
+                (
+                    this.WildcardSubtype == input.WildcardSubtype ||
+                    (this.WildcardSubtype != null &&
+                    this.WildcardSubtype.Equals(input.WildcardSubtype))
                 );
         }
 
@@ -166,10 +166,10 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Subtype.GetHashCode();
                 if (this.Parameters != null)
                     hashCode = hashCode * 59 + this.Parameters.GetHashCode();
-                if (this.WildcardSubtype != null)
-                    hashCode = hashCode * 59 + this.WildcardSubtype.GetHashCode();
                 if (this.WildcardType != null)
                     hashCode = hashCode * 59 + this.WildcardType.GetHashCode();
+                if (this.WildcardSubtype != null)
+                    hashCode = hashCode * 59 + this.WildcardSubtype.GetHashCode();
                 return hashCode;
             }
         }

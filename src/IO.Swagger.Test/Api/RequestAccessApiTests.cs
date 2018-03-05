@@ -65,19 +65,6 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
-        /// Test GetRequestAccess
-        /// </summary>
-        [Test]
-        public void GetRequestAccessTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //List<string> space = null;
-            //string status = null;
-            //var response = instance.GetRequestAccess(space, status);
-            //Assert.IsInstanceOf<GenericDataRepresentationListRequestData> (response, "response is GenericDataRepresentationListRequestData");
-        }
-        
-        /// <summary>
         /// Test RequestAccessToSpace
         /// </summary>
         [Test]
